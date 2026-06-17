@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="[Article description — the main argument or finding of this article, in 1-2 sentences.]" />
+  <title>[Article Title] — Shayeer Emanee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-name">Shayeer Emanee</span>
+        <span class="nav__logo-title">Lawyer · Entrepreneur · Technologist · Artist</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="experience.html" class="nav__link">Experience</a></li>
+        <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+        <li><a href="blog.html" class="nav__link">Blog</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="nav__theme-btn" id="theme-toggle" aria-label="Toggle theme">☀</button>
+        <a href="contact.html" class="nav__cta">Get in Touch</a>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav__mobile" id="nav-mobile">
+    <a href="index.html" class="nav__mobile-link">Home</a>
+    <a href="about.html" class="nav__mobile-link">About</a>
+    <a href="experience.html" class="nav__mobile-link">Experience</a>
+    <a href="portfolio.html" class="nav__mobile-link">Portfolio</a>
+    <a href="blog.html" class="nav__mobile-link">Blog</a>
+    <a href="contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- Back Link -->
+    <div style="padding: calc(var(--nav-height) + 1.5rem) 0 0; border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <a href="blog.html" style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.82rem; color:var(--text-muted); transition:color var(--transition); padding-bottom:1.5rem;">
+          ← Back to Blog
+        </a>
+      </div>
+    </div>
+
+    <!-- Article -->
+    <article style="padding: 4rem 0 6rem;">
+      <div class="container">
+        <div class="post-layout">
+
+          <!-- Table of Contents (desktop only) -->
+          <aside class="post-toc">
+            <p class="post-toc__title">Contents</p>
+            <div class="post-toc__list" id="toc-list">
+              <!-- Auto-populated by JS -->
+            </div>
+
+            <!-- Citation style note -->
+            <div style="margin-top:2rem; padding:1rem; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm);">
+              <p style="font-size:0.72rem; font-weight:700; color:var(--text-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem;">Citation Style</p>
+              <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.6;">[AGLC4 / Bluebook / Oxford] · All cases cited inline · Full bibliography at end</p>
+            </div>
+          </aside>
+
+          <!-- Article Content -->
+          <div>
+
+            <!-- Post Header -->
+            <header class="post-header">
+              <p class="post-header__category">[Area of Law e.g. Constitutional Law]</p>
+              <h1 class="post-header__title">
+                [Your Full Article Title — Something That Signals Depth, Analysis, and Original Thinking]
+              </h1>
+
+              <div class="post-header__meta">
+                <div class="post-header__author">
+                  <div class="post-header__author-avatar">SE</div>
+                  <span>Shayeer Emanee</span>
+                </div>
+                <div class="post-header__separator"></div>
+                <span class="post-header__date">[Day Month Year]</span>
+                <div class="post-header__separator"></div>
+                <span class="post-header__read-time">[N] min read</span>
+              </div>
+
+              <!-- Tags -->
+              <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.5rem;">
+                <span class="tag tag--accent">[Primary Legal Topic]</span>
+                <span class="tag">[Secondary Topic]</span>
+                <span class="tag">[Case Name]</span>
+                <span class="tag">[Jurisdiction]</span>
+              </div>
+            </header>
+
+            <!-- Hero Image / Pull Image placeholder -->
+            <div style="aspect-ratio:16/7; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card)); border:1px solid var(--border); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; font-size:4rem; color:var(--border-light); margin-bottom:3rem;">§</div>
+
+            <!-- Post Body -->
+            <div class="post-content">
+
+              <p>
+                [This is where your article begins. Open with a compelling hook — a provocative question,
+                a striking fact, a recent event, or a statement that challenges conventional wisdom.
+                Pull the reader in immediately. Set out the central issue you're examining.]
+              </p>
+
+              <p>
+                [Introduce the significance of the topic. Why does this legal question matter?
+                What are the real-world stakes? Who does it affect, and how?
+                Give the reader a reason to care before you get into the law itself.]
+              </p>
+
+              <h2>Background and Legal Framework</h2>
+
+              <p>
+                [Begin setting out the legal landscape. Introduce the relevant legislation, common law principles,
+                or constitutional provisions that govern the area you're analysing.
+                Cite your sources using your preferred citation style.]
+              </p>
+
+              <p>
+                [Explain key terms and concepts that the reader needs to understand.
+                Even if writing for a legal audience, precision matters.
+                If writing for a general audience, briefly explain technical terms.]
+              </p>
+
+              <blockquote>
+                "[Insert a compelling quote from a judge, academic, or statute that captures a key idea in your argument.
+                Good legal writing uses primary sources as building blocks, not just decoration.]"
+                <br />— [Source: Case Name [Year] / Author, Title (Year) Page]
+              </blockquote>
+
+              <h2>Analysis</h2>
+
+              <h3>First Argument or Issue</h3>
+
+              <p>
+                [Develop your first line of analysis. Walk through the law, apply it to the facts or
+                scenario you're examining, and explain what it means. Draw on case law, statutes,
+                academic commentary, and your own reasoning. Show your analytical process.]
+              </p>
+
+              <p>
+                [Go deeper. Explain the cases that support your argument, and address those that
+                complicate or challenge it. Good legal analysis acknowledges counterarguments before
+                it defeats them.]
+              </p>
+
+              <h3>Second Argument or Issue</h3>
+
+              <p>
+                [Develop your second line of analysis. If this connects to the first, show how.
+                Build your argument progressively — each section should add to, not just repeat, what came before.]
+              </p>
+
+              <p>
+                [Use specific case citations. In legal writing, the cases <em>are</em> the authority.
+                Reference specific passages from judgments where possible.]
+              </p>
+
+              <h3>Tensions, Exceptions, or Complications</h3>
+
+              <p>
+                [The best legal writing doesn't ignore inconvenient complexity — it grapples with it.
+                Identify where the law is uncertain, contested, or inconsistent.
+                Where do the courts disagree? Where does academic commentary diverge?]
+              </p>
+
+              <p>
+                [This section shows your depth of knowledge and intellectual honesty.
+                It's where students stand out from superficial analysis.]
+              </p>
+
+              <h2>Critical Commentary</h2>
+
+              <p>
+                [Offer your own evaluation. Is the current legal position satisfactory?
+                Does it achieve justice? Is it coherent? Is there a better approach?
+                Reference academic views and engage with them — agree, disagree, or synthesise.]
+              </p>
+
+              <p>
+                [This is your voice as a legal scholar. Be confident but grounded in evidence.
+                A well-reasoned critique backed by authority is far more impressive than a safe summary.]
+              </p>
+
+              <h2>Conclusion</h2>
+
+              <p>
+                [Bring everything together. Restate your central argument without just repeating yourself.
+                Explain what you have shown and what it means. Leave the reader with something to think about —
+                an open question, a reform suggestion, or a final observation that lingers.]
+              </p>
+
+              <p>
+                [A strong conclusion is the last thing the reader remembers. Make it count.]
+              </p>
+
+              <hr />
+
+              <h2>Bibliography</h2>
+
+              <h3>Cases</h3>
+
+              <ul>
+                <li><em>[Case Name v Case Name</em> [Year] Report Volume Page (Court)]</li>
+                <li><em>[Case Name v Case Name</em> [Year] Report Volume Page (Court)]</li>
+                <li><em>[Case Name v Case Name</em> [Year] Report Volume Page (Court)]</li>
+              </ul>
+
+              <h3>Legislation</h3>
+
+              <ul>
+                <li>[Act Name Year] (Jurisdiction)</li>
+                <li>[Act Name Year] (Jurisdiction)</li>
+              </ul>
+
+              <h3>Secondary Sources</h3>
+
+              <ul>
+                <li>[Author Surname, 'Article Title' ([Year]) Volume Journal Abbreviation Page]</li>
+                <li>[Author Surname, <em>Book Title</em> (Publisher, Edition Year) Page]</li>
+                <li>[Author Surname, 'Chapter Title' in Editor Surname (ed), <em>Book Title</em> (Publisher Year) Page]</li>
+              </ul>
+
+            </div>
+            <!-- end post-content -->
+
+            <!-- Tags -->
+            <div class="post-tags">
+              <span class="tag tag--accent">[Area of Law]</span>
+              <span class="tag">[Case Name]</span>
+              <span class="tag">[Jurisdiction]</span>
+              <span class="tag">[Legal Concept]</span>
+              <span class="tag">[Legal Concept]</span>
+            </div>
+
+            <!-- Author Card -->
+            <div class="card" style="margin-top:3rem; padding:2rem; display:grid; grid-template-columns:auto 1fr; gap:1.5rem; align-items:center;">
+              <div style="width:72px; height:72px; border-radius:50%; background:var(--accent-dim); border:2px solid var(--border-light); display:flex; align-items:center; justify-content:center; font-family:var(--font-heading); font-size:1.5rem; color:var(--accent); font-weight:700;">SE</div>
+              <div>
+                <p style="font-size:0.72rem; font-weight:700; color:var(--text-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.3rem;">Written by</p>
+                <h4 style="font-size:1.1rem; margin-bottom:0.4rem;">Shayeer Emanee</h4>
+                <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6; margin-bottom:1rem;">
+                  First-year Bachelor of Laws / Bachelor of Commerce student at Macquarie
+                  University. Founder of SAZICOR, freelance photographer, and the developer
+                  behind this site. Writing about law, commerce, and where they intersect.
+                </p>
+                <div style="display:flex; gap:0.5rem;">
+                  <a href="about.html" class="btn btn--ghost btn--sm">About Me</a>
+                  <a href="blog.html" class="btn btn--secondary btn--sm">More Articles</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Related Posts -->
+            <div class="post-related">
+              <h3 class="post-related__title">Related Articles</h3>
+              <div class="post-related__grid">
+
+                <article class="blog-card card">
+                  <div class="blog-card__img">
+                    <div class="blog-card__img-placeholder">⚖</div>
+                  </div>
+                  <div class="blog-card__body">
+                    <div class="blog-card__meta">
+                      <span class="blog-card__category">[Category]</span>
+                      <span class="blog-card__date">[Month Year]</span>
+                    </div>
+                    <h3 class="blog-card__title">[Related Article Title]</h3>
+                    <div class="blog-card__footer">
+                      <a href="blog-post.html" class="blog-card__read-link">Read →</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="blog-card card">
+                  <div class="blog-card__img">
+                    <div class="blog-card__img-placeholder">§</div>
+                  </div>
+                  <div class="blog-card__body">
+                    <div class="blog-card__meta">
+                      <span class="blog-card__category">[Category]</span>
+                      <span class="blog-card__date">[Month Year]</span>
+                    </div>
+                    <h3 class="blog-card__title">[Related Article Title]</h3>
+                    <div class="blog-card__footer">
+                      <a href="blog-post.html" class="blog-card__read-link">Read →</a>
+                    </div>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+
+          </div>
+          <!-- end article content column -->
+
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__brand-name">Shayeer Emanee</div>
+          <div class="footer__brand-title">Lawyer · Entrepreneur · Technologist · Artist</div>
+          <p class="footer__brand-desc">Macquarie Law &amp; Commerce student, founder of SAZICOR, freelance photographer, and artist.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link">Home</a></li>
+            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="experience.html" class="footer__link">Experience</a></li>
+            <li><a href="portfolio.html" class="footer__link">Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Blog</p>
+          <ul class="footer__links">
+            <li><a href="blog.html" class="footer__link">All Articles</a></li>
+            <li><a href="blog.html" class="footer__link">Constitutional Law</a></li>
+            <li><a href="blog.html" class="footer__link">Commercial Law</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Connect</p>
+          <ul class="footer__links">
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
+            <li><a href="https://www.linkedin.com/in/shayeere" class="footer__link" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/ShayeerEm" class="footer__link" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© <span id="footer-year"></span> Shayeer Emanee. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#" class="footer__bottom-link">Privacy</a>
+          <a href="#" class="footer__bottom-link">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

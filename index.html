@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Shayeer Emanee — Law & Commerce Student, Legal Analyst, Artist, and Entrepreneur." />
+  <title>Shayeer Emanee — Lawyer · Entrepreneur · Technologist · Artist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-name">Shayeer Emanee</span>
+        <span class="nav__logo-title">Lawyer · Entrepreneur · Technologist · Artist</span>
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="experience.html" class="nav__link">Experience</a></li>
+        <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+        <li><a href="blog.html" class="nav__link">Blog</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="nav__theme-btn" id="theme-toggle" aria-label="Toggle theme">☀</button>
+        <a href="contact.html" class="nav__cta">Get in Touch</a>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav__mobile" id="nav-mobile">
+    <a href="index.html" class="nav__mobile-link">Home</a>
+    <a href="about.html" class="nav__mobile-link">About</a>
+    <a href="experience.html" class="nav__mobile-link">Experience</a>
+    <a href="portfolio.html" class="nav__mobile-link">Portfolio</a>
+    <a href="blog.html" class="nav__mobile-link">Blog</a>
+    <a href="contact.html" class="nav__mobile-link">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- ======================================================
+         HERO
+         ====================================================== -->
+    <section class="hero">
+      <div class="hero__bg">
+        <div class="hero__grid-overlay"></div>
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <div class="hero__orb hero__orb--3"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow">Welcome to my corner of the internet</p>
+
+        <h1 class="hero__title">
+          <span class="gradient-text">Shayeer Emanee</span>
+        </h1>
+
+        <p class="hero__title-sub">Lawyer · Entrepreneur · Technologist · Artist</p>
+
+        <div class="hero__roles">
+          <span class="hero__role hero__role--accent">Future Lawyer</span>
+          <span class="hero__role">Entrepreneur</span>
+          <span class="hero__role">Technical Specialist</span>
+          <span class="hero__role">Artist</span>
+          <span class="hero__role">Photographer</span>
+        </div>
+
+        <p class="hero__description">
+          Studying a double degree in Law and Commerce at Macquarie University.
+          Founder of SAZICOR, freelance photographer, and the developer behind this site —
+          this is where my legal writing, technical work, and creative output all live.
+        </p>
+
+        <div class="hero__cta">
+          <a href="blog.html" class="btn btn--primary btn--lg">Read the Blog</a>
+          <a href="about.html" class="btn btn--secondary btn--lg">About Me</a>
+        </div>
+      </div>
+
+      <div class="hero__scroll">
+        <div class="hero__scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         STATS STRIP
+         ====================================================== -->
+    <section class="stats-strip">
+      <div class="container">
+        <div class="stats-strip__inner">
+          <div class="stat-item">
+            <div class="stat-item__number">92.25</div>
+            <div class="stat-item__label">ATAR Achieved</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-item__number" data-count="5" data-suffix="+">5+</div>
+            <div class="stat-item__label">Years of Art</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-item__number" data-count="6" data-suffix="+">6+</div>
+            <div class="stat-item__label">Years at SAZICOR</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-item__number" data-count="1" data-suffix="">1</div>
+            <div class="stat-item__label">Active Business</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-item__number" data-count="2" data-suffix="">2</div>
+            <div class="stat-item__label">Degrees</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         ABOUT PREVIEW
+         ====================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="about-preview">
+          <div class="about-preview__img animate-on-scroll">
+            <div class="about-preview__photo">
+              <img src="assets/headshot.jpg" alt="Shayeer Emanee" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:var(--radius-lg);" onerror="this.style.display='none'; this.parentElement.innerHTML='Shayeer';" />
+            </div>
+            <div class="about-preview__badge">
+              <img src="assets/macquarie-logo.png" alt="Macquarie University" style="height:38px; width:auto; object-fit:contain; display:block;" onerror="this.outerHTML='<div class=&quot;about-preview__badge-number&quot;>MQ</div><div class=&quot;about-preview__badge-label&quot;>Macquarie</div>';" />
+            </div>
+          </div>
+
+          <div class="about-preview__text animate-on-scroll">
+            <p class="section-eyebrow">Who I Am</p>
+            <h2>Law student, founder, technologist, artist — all in one.</h2>
+            <div class="divider"></div>
+            <p>
+              I'm Shayeer Emanee, a first-year Bachelor of Laws / Bachelor of Commerce student
+              at Macquarie University. I graduated from Girraween High School with an ATAR of 92.25
+              and have been building things — businesses, websites, photographs, and ideas —
+              for as long as I can remember.
+            </p>
+            <p>
+              This site is my living portfolio: a place for legal analysis and writing, my creative
+              work, and a record of everything I'm building. It was also designed and coded entirely
+              by me — every line.
+            </p>
+
+            <div class="about-preview__highlights">
+              <div class="about-highlight">
+                <div class="about-highlight__dot"></div>
+                <span>Bachelor of Laws / Commerce at Macquarie University</span>
+              </div>
+              <div class="about-highlight">
+                <div class="about-highlight__dot"></div>
+                <span>Technical Specialist &amp; founder behind SAZICOR</span>
+              </div>
+              <div class="about-highlight">
+                <div class="about-highlight__dot"></div>
+                <span>Designed &amp; coded this entire portfolio website from scratch</span>
+              </div>
+              <div class="about-highlight">
+                <div class="about-highlight__dot"></div>
+                <span>Artist &amp; photographer — drawing, digital art, and commercial photography</span>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
+              <a href="about.html" class="btn btn--primary">More About Me</a>
+              <a href="experience.html" class="btn btn--secondary">View Experience</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         FEATURED BLOG POSTS
+         ====================================================== -->
+    <section class="section featured-blog">
+      <div class="container">
+        <div class="section-header flex-between" style="align-items:flex-end;">
+          <div>
+            <p class="section-eyebrow">Legal Analysis &amp; Writing</p>
+            <h2 class="section-title">From the Blog</h2>
+          </div>
+          <a href="blog.html" class="btn btn--secondary btn--sm">All Posts →</a>
+        </div>
+
+        <div class="featured-blog__grid">
+
+          <!-- Featured / Primary Post -->
+          <article class="blog-card featured-blog__primary card animate-on-scroll">
+            <div class="blog-card__img">
+              <div class="blog-card__img-placeholder">⚖</div>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Defamation Law</span>
+                <span class="blog-card__date">15 April 2024</span>
+                <span class="blog-card__read-time">10 min read</span>
+              </div>
+              <h3 class="blog-card__title">
+                Lehrmann v Network Ten [2024] FCA 369: A Landmark Ruling on the Defence of Truth and Public Interest Journalism
+              </h3>
+              <p class="blog-card__excerpt">
+                Justice Lee's Federal Court judgment exposes a jarring truth about Australia's parallel legal systems: a person can walk free from a criminal trial yet be found, on the balance of probabilities, to have committed the very act alleged. This case summary unpacks the Defence of Truth, the Briginshaw principle, and why Network Ten won while still being criticised for how they reported the story.
+              </p>
+              <div class="blog-card__footer">
+                <div class="blog-card__author">
+                  <div class="blog-card__avatar">SE</div>
+                  Shayeer Emanee
+                </div>
+                <a href="posts/lehrmann-v-network-ten.html" class="blog-card__read-link">Read Article →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Secondary Post 1 -->
+          <article class="blog-card card animate-on-scroll">
+            <div class="blog-card__img">
+              <div class="blog-card__img-placeholder">⚡</div>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Criminal Law · Sentencing</span>
+                <span class="blog-card__date">17 December 2025</span>
+              </div>
+              <h3 class="blog-card__title">
+                Luchetti v R [2025] NSWCCA 222: When a Lighter is Not a Knife
+              </h3>
+              <p class="blog-card__excerpt">
+                A case note on the NSW Court of Criminal Appeal's ruling that applying the <em>R v Henry</em> guideline to a robbery committed with a cigarette lighter was a material sentencing error.
+              </p>
+              <div class="blog-card__footer">
+                <div class="blog-card__author">
+                  <div class="blog-card__avatar">SE</div>
+                  Shayeer Emanee
+                </div>
+                <a href="posts/luchetti-v-r.html" class="blog-card__read-link">Read →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Secondary Post 3 — placeholder -->
+          <article class="blog-card card animate-on-scroll">
+            <div class="blog-card__img">
+              <div class="blog-card__img-placeholder">§</div>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Legal Commentary</span>
+                <span class="blog-card__date">Coming Soon</span>
+              </div>
+              <h3 class="blog-card__title">
+                More Analysis Coming Soon
+              </h3>
+              <p class="blog-card__excerpt">
+                Further articles on constitutional law, contract, and commercial topics are in progress. Check back or follow along via LinkedIn.
+              </p>
+              <div class="blog-card__footer">
+                <div class="blog-card__author">
+                  <div class="blog-card__avatar">SE</div>
+                  Shayeer Emanee
+                </div>
+                <a href="blog.html" class="blog-card__read-link">Browse Blog →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         PORTFOLIO PREVIEW
+         ====================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header flex-between" style="align-items:flex-end;">
+          <div>
+            <p class="section-eyebrow">Art &amp; Creative Work</p>
+            <h2 class="section-title">Portfolio Highlights</h2>
+          </div>
+          <a href="portfolio.html" class="btn btn--secondary btn--sm">View All →</a>
+        </div>
+
+        <div class="portfolio-grid animate-on-scroll">
+          <article class="portfolio-card card" data-category="drawing">
+            <div class="portfolio-card__img">✏</div>
+            <div class="portfolio-card__overlay">
+              <h4 class="portfolio-card__title">[Artwork Title]</h4>
+              <p class="portfolio-card__medium">Pencil on Paper · [Year]</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card card" data-category="digital">
+            <div class="portfolio-card__img">🎨</div>
+            <div class="portfolio-card__overlay">
+              <h4 class="portfolio-card__title">[Artwork Title]</h4>
+              <p class="portfolio-card__medium">Digital Art · [Year]</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card card" data-category="drawing">
+            <div class="portfolio-card__img">📐</div>
+            <div class="portfolio-card__overlay">
+              <h4 class="portfolio-card__title">[Artwork Title]</h4>
+              <p class="portfolio-card__medium">Ink Drawing · [Year]</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         CTA BANNER
+         ====================================================== -->
+    <section class="section--sm" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <div style="display:grid; grid-template-columns:1fr auto; align-items:center; gap:2rem;">
+          <div>
+            <h3 style="margin-bottom:0.5rem;">Want to connect or collaborate?</h3>
+            <p style="margin:0; font-size:0.95rem;">
+              Whether you're a recruiter, fellow student, artist, or someone with an interesting idea — I'd love to hear from you.
+            </p>
+          </div>
+          <a href="contact.html" class="btn btn--primary btn--lg">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__brand-name">Shayeer Emanee</div>
+          <div class="footer__brand-title">Lawyer · Entrepreneur · Technologist · Artist</div>
+          <p class="footer__brand-desc">
+            Macquarie Law &amp; Commerce student, founder of SAZICOR, freelance photographer,
+            and artist. Building things that matter.
+          </p>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link">Home</a></li>
+            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="experience.html" class="footer__link">Experience</a></li>
+            <li><a href="portfolio.html" class="footer__link">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Content</p>
+          <ul class="footer__links">
+            <li><a href="blog.html" class="footer__link">Legal Blog</a></li>
+            <li><a href="blog.html#constitutional" class="footer__link">Constitutional Law</a></li>
+            <li><a href="blog.html#commercial" class="footer__link">Commercial Law</a></li>
+            <li><a href="blog.html#commentary" class="footer__link">Commentary</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Connect</p>
+          <ul class="footer__links">
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
+            <li><a href="https://www.linkedin.com/in/shayeere" class="footer__link" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/ShayeerEm" class="footer__link" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">© <span id="footer-year"></span> Shayeer Emanee. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#" class="footer__bottom-link">Privacy</a>
+          <a href="#" class="footer__bottom-link">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

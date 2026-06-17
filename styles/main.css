@@ -44,6 +44,21 @@
 
   --nav-h: 52px;
   --max-w: 1440px;
+
+  /* Legacy aliases — keeps older post files rendering correctly */
+  --accent:       var(--red);
+  --accent-dim:   var(--red-bg);
+  --bg-card:      var(--surface);
+  --bg-secondary: var(--surface);
+  --border:       var(--rule);
+  --border-light: var(--rule-faint);
+  --font-heading: var(--serif);
+  --nav-height:   var(--nav-h);
+  --radius-sm:    0px;
+  --radius-md:    2px;
+  --text-muted:   var(--ink-3);
+  --text-secondary: var(--ink-2);
+  --transition:   var(--dur-base) var(--ease);
 }
 
 [data-theme="dark"] {

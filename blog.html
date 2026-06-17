@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Legal blog by Shayeer Emanee — analysis, commentary, and writing on law and commerce." />
+  <meta name="description" content="Legal writing and case analysis by Shayeer Emanee — criminal law, professional responsibility, foundations, and more." />
   <title>Legal Blog — Shayeer Emanee</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,13 +11,15 @@
 </head>
 <body>
 
+  <div class="cursor cursor--dot" id="cursor-dot"></div>
+  <div class="cursor cursor--ring" id="cursor-ring"></div>
   <div class="scroll-progress" id="scroll-progress"></div>
 
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
         <span class="nav__logo-name">Shayeer Emanee</span>
-        <span class="nav__logo-title">Lawyer &middot; Entrepreneur &middot; Technologist &middot; Artist</span>
+        <span class="nav__logo-sub">Lawyer · Entrepreneur · Artist</span>
       </a>
       <ul class="nav__links">
         <li><a href="index.html" class="nav__link">Home</a></li>
@@ -28,7 +30,7 @@
         <li><a href="contact.html" class="nav__link">Contact</a></li>
       </ul>
       <div class="nav__actions">
-        <button class="nav__theme-btn" id="theme-toggle" aria-label="Toggle theme">&#x2600;</button>
+        <button class="nav__theme-btn" id="theme-toggle" aria-label="Toggle theme">●</button>
         <a href="contact.html" class="nav__cta">Get in Touch</a>
         <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
@@ -38,1386 +40,502 @@
   </nav>
 
   <div class="nav__mobile" id="nav-mobile">
-    <a href="index.html" class="nav__mobile-link">Home</a>
-    <a href="about.html" class="nav__mobile-link">About</a>
-    <a href="experience.html" class="nav__mobile-link">Experience</a>
-    <a href="portfolio.html" class="nav__mobile-link">Portfolio</a>
-    <a href="blog.html" class="nav__mobile-link">Blog</a>
-    <a href="contact.html" class="nav__mobile-link">Contact</a>
+    <div class="nav__mobile-inner">
+      <a href="index.html" class="nav__mobile-link">Home</a>
+      <a href="about.html" class="nav__mobile-link">About</a>
+      <a href="experience.html" class="nav__mobile-link">Experience</a>
+      <a href="portfolio.html" class="nav__mobile-link">Portfolio</a>
+      <a href="blog.html" class="nav__mobile-link">Blog</a>
+      <a href="contact.html" class="nav__mobile-link">Contact</a>
+    </div>
   </div>
 
   <main>
 
     <section class="page-hero">
       <div class="container">
-        <p class="page-hero__eyebrow">Legal Analysis &amp; Commentary</p>
-        <h1 class="page-hero__title">The Legal<br /><span class="gradient-text">Blog</span></h1>
-        <p class="page-hero__subtitle">
-          Rigorous analysis, clear writing, and original thinking on the legal and commercial questions
-          that matter. Written by a student, for anyone who wants to understand the law.
+        <p class="page-hero__eyebrow">52 Articles · Australian Law</p>
+        <h1 class="page-hero__title">Legal Writing</h1>
+        <p class="page-hero__sub">
+          Case notes, doctrinal analysis, and commentary across criminal law, professional responsibility,
+          foundations of law, and more — written to think clearly about the law.
         </p>
       </div>
     </section>
 
+    <!-- FEATURED -->
+    <section class="section--sm">
+      <div class="container">
+        <div class="blog-featured anim-fade">
+          <div class="blog-featured__label">
+            <span class="t-label t-red">Featured Article</span>
+          </div>
+          <div class="blog-featured__meta">
+            <span class="t-label t-muted">Defamation Law · Commentary</span>
+            <span class="t-mono t-muted" style="font-size:var(--fs-xs);">15 April 2024</span>
+            <span class="t-muted" style="font-size:var(--fs-xs);">10 min read</span>
+          </div>
+          <div class="blog-featured__body">
+            <a href="posts/lehrmann-v-network-ten.html">
+              <h2 class="blog-featured__title">
+                Lehrmann v Network Ten [2024] FCA 369: A Landmark Ruling on Truth and Public Interest Journalism
+              </h2>
+            </a>
+            <p class="blog-featured__excerpt">
+              Justice Lee's Federal Court judgment exposes a jarring truth about Australia's parallel legal systems:
+              a person can walk free from a criminal trial yet be found, on the balance of probabilities, to have
+              committed the very act alleged. This case summary unpacks the Defence of Truth, Briginshaw, and why
+              Network Ten won while being criticised for how they reported it.
+            </p>
+            <a href="posts/lehrmann-v-network-ten.html" class="arrow-link">Read Article →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER + LIST -->
     <section class="section">
-      <div class="container container--wide">
-        <div class="blog-layout">
+      <div class="container">
 
-          <div>
+        <div class="blog-controls anim-fade">
+          <div class="blog-filters">
+            <button class="filter-btn blog-filter-btn is-active" data-filter="all">All <span class="blog-filter-btn__count">52</span></button>
+            <button class="filter-btn blog-filter-btn" data-filter="criminal">Criminal <span class="blog-filter-btn__count">11</span></button>
+            <button class="filter-btn blog-filter-btn" data-filter="foundations">Foundations <span class="blog-filter-btn__count">12</span></button>
+            <button class="filter-btn blog-filter-btn" data-filter="professional">Prof. Responsibility <span class="blog-filter-btn__count">14</span></button>
+            <button class="filter-btn blog-filter-btn" data-filter="family">Family <span class="blog-filter-btn__count">4</span></button>
+            <button class="filter-btn blog-filter-btn" data-filter="property">Property <span class="blog-filter-btn__count">3</span></button>
+            <button class="filter-btn blog-filter-btn" data-filter="estates">Wills &amp; Estates <span class="blog-filter-btn__count">3</span></button>
+            <button class="filter-btn blog-filter-btn" data-filter="dispute">Dispute <span class="blog-filter-btn__count">3</span></button>
+            <button class="filter-btn blog-filter-btn" data-filter="commercial">Commercial <span class="blog-filter-btn__count">1</span></button>
+          </div>
+          <div class="blog-search-wrap">
+            <input type="search" id="blog-search" class="blog-search" placeholder="Search articles…" aria-label="Search articles" />
+          </div>
+        </div>
 
-            <div class="blog-search animate-on-scroll">
-              <span class="blog-search__icon">&#x2315;</span>
-              <input
-                type="search"
-                class="blog-search__input"
-                id="blog-search"
-                placeholder="Search articles..."
-                aria-label="Search blog posts"
-              />
-            </div>
+        <div class="blog-list anim-fade" id="blog-list">
 
-            <div class="filter-tabs animate-on-scroll">
-              <button class="filter-tab is-active" data-filter="all">All (52)</button>
-              <button class="filter-tab" data-filter="criminal">Criminal Law</button>
-              <button class="filter-tab" data-filter="foundations">Foundations</button>
-              <button class="filter-tab" data-filter="professional">Prof. Responsibility</button>
-              <button class="filter-tab" data-filter="family">Family Law</button>
-              <button class="filter-tab" data-filter="property">Property</button>
-              <button class="filter-tab" data-filter="estates">Wills &amp; Estates</button>
-              <button class="filter-tab" data-filter="dispute">Dispute Resolution</button>
-              <button class="filter-tab" data-filter="commercial">Commercial</button>
-            </div>
-
-            <div class="blog-featured-post blog-post-item animate-on-scroll" data-category="commentary">
-              <article class="blog-card card">
-                <div class="blog-card__img" style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));">
-                  <div class="blog-card__img-placeholder">&#x2696;</div>
-                </div>
-                <div class="blog-card__body">
-                  <div class="blog-card__meta">
-                    <span class="blog-card__category">Defamation Law</span>
-                    <span class="blog-card__date">15 April 2024</span>
-                    <span class="blog-card__read-time">10 min read</span>
-                  </div>
-                  <h2 class="blog-card__title" style="font-size:1.6rem;">Lehrmann v Network Ten [2024] FCA 369</h2>
-                  <p class="blog-card__excerpt" style="font-size:0.95rem;">Case summary and analysis of Lehrmann v Network Ten Pty Limited [2024] FCA 369 — a landmark ruling on the defence of truth, the Briginshaw p</p>
-                  <div class="blog-card__footer">
-                    <div class="blog-card__author">
-                      <div class="blog-card__avatar">SE</div>
-                      Shayeer Emanee
-                    </div>
-                    <a href="posts/lehrmann-v-network-ten.html" class="btn btn--ghost btn--sm">Read Article &#x2192;</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <div class="blog-main-grid" style="margin-top:1.5rem;">
-
-              <div class="blog-post-item animate-on-scroll" data-category="criminal">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x26A1;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Criminal Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">6 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Objective Seriousness in Armed Robbery: The Henry Guideline and Its Limits</h3>
-                    <p class="blog-card__excerpt">Few sentencing principles have proved as persistently contested in New South Wales criminal law as the proper ...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/01-armed-robbery-henry-guideline.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="criminal">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x26A1;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Criminal Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Towers v R [2025] NSWCCA 142: Keeping Objective and Subjective Factors Separate in Sentencing</h3>
-                    <p class="blog-card__excerpt">In Towers v R [2025] NSWCCA 142, the NSW Court of Criminal Appeal confronted a question that sits at the inter...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/02-towers-v-r-case-note.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="criminal">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x26A1;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Criminal Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">The Verdins Principles in NSW Criminal Sentencing: Mental Illness, Culpability, and the Limits of Deterrence</h3>
-                    <p class="blog-card__excerpt">The Verdins principles  -  named after Verdins v R [2007] VSCA 102  -  represent the most comprehensive framew...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/03-verdins-principles-nsw.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="criminal">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x26A1;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Criminal Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">The Guilty Plea Discount in NSW: Timing, Tiers, and the Utilitarian Principle</h3>
-                    <p class="blog-card__excerpt">The discount for a guilty plea is one of the most practically significant elements of criminal sentencing in N...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/04-guilty-plea-discount-nsw.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="criminal">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x26A1;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Criminal Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">6 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Guideline Judgments in NSW: Mechanism, Limits, and the Problem of Judicial Discretion</h3>
-                    <p class="blog-card__excerpt">Guideline judgments are a distinctive feature of the NSW criminal sentencing landscape. Unique in Australia at...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/05-guideline-judgments-nsw.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="criminal">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x26A1;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Criminal Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Tendency, Coincidence, and Hearsay in NSW Criminal Trials: The Uniform Evidence Act Framework</h3>
-                    <p class="blog-card__excerpt">The Uniform Evidence Acts  -  the Evidence Act 1995 (Cth) and its state counterparts, including the Evidence A...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/06-evidence-law-criminal-trials.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="criminal">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x26A1;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Criminal Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">From Arrest to Verdict: A Procedural Guide to NSW Criminal Law for Legal Practitioners</h3>
-                    <p class="blog-card__excerpt">The NSW criminal justice system is governed by a complex but coherent procedural architecture that tracks a ma...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/07-criminal-procedure-guide.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="criminal">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x26A1;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Criminal Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Domestic Violence Law in NSW: AVOs, Criminal Proceedings, and the CDPVA Framework</h3>
-                    <p class="blog-card__excerpt">Domestic and family violence law is one of the highest-volume practice areas in NSW criminal and civil law. Bo...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/08-domestic-violence-law-nsw.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="criminal">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x26A1;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Criminal Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Drug Offences in NSW: Possession, Supply, and the Deemed Supply Presumption under the DMTA</h3>
-                    <p class="blog-card__excerpt">Drug offences are among the most commonly prosecuted criminal matters in NSW, and they arise at every level of...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/09-drug-offences-nsw.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="criminal">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x26A1;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Criminal Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Appellate Advocacy in NSW Criminal Law: Grounds of Sentence Appeal and the Resentencing Exercise</h3>
-                    <p class="blog-card__excerpt">The NSW Court of Criminal Appeal (CCA) is the primary appellate court for criminal matters in New South Wales....</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/10-criminal-appeals-nsw.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="dispute">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x2696;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Dispute Resolution</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Civil Litigation in NSW: From Pleadings to Judgment under the UCPR</h3>
-                    <p class="blog-card__excerpt">Civil litigation in New South Wales is governed principally by the Civil Procedure Act 2005 (NSW) and the Unif...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/11-civil-litigation-procedure.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="dispute">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x2696;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Dispute Resolution</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Alternative Dispute Resolution in NSW: Mediation, Arbitration, and the Without Prejudice Privilege</h3>
-                    <p class="blog-card__excerpt">Alternative dispute resolution (ADR) has become a central component of the NSW civil justice system. The cost,...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/12-adr-nsw.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="dispute">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x2696;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Dispute Resolution</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Costs in NSW Civil Litigation: Ordinary Costs, Indemnity Costs, and the Calderbank Offer</h3>
-                    <p class="blog-card__excerpt">Costs are the financial lifeblood of civil litigation. For many litigants, the prospect of an adverse costs or...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/13-costs-civil-litigation.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="family">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F3E0;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Family Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Parenting Orders under the Family Law Act: Best Interests, the 2024 Amendments, and Family Violence</h3>
-                    <p class="blog-card__excerpt">Parenting disputes are the most emotionally and legally complex matters that family law practitioners encounte...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/14-parenting-orders-family-law.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="family">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F3E0;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Family Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Property Settlement under the Family Law Act: The Four-Step Process and Contributions Analysis</h3>
-                    <p class="blog-card__excerpt">Property settlement in family law proceedings is governed by Part VIII of the Family Law Act 1975 (Cth) (FLA),...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/15-property-settlement-family-law.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="family">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F3E0;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Family Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Divorce in Australian Law: The No-Fault Ground, Separation Under One Roof, and the 12-Month Limitation</h3>
-                    <p class="blog-card__excerpt">Australia moved to a no-fault divorce regime with the enactment of the Family Law Act 1975 (Cth), which abolis...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/16-divorce-australian-law.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="family">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F3E0;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Family Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Binding Financial Agreements under the Family Law Act: Requirements, Risks, and Thorne v Kennedy</h3>
-                    <p class="blog-card__excerpt">Binding Financial Agreements (BFAs)  -  colloquially referred to as &amp;quot;prenuptial agreements&amp;quot; ...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/17-binding-financial-agreements.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="property">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F3DB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Property Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">The NSW Conveyancing Process: From Contract Preparation to Electronic Settlement</h3>
-                    <p class="blog-card__excerpt">Conveyancing is the legal process by which ownership of real property is transferred from one person to anothe...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/18-conveyancing-process-nsw.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="property">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F3DB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Property Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Easements in NSW: Creation, Types, and Remedies for Easement Disputes</h3>
-                    <p class="blog-card__excerpt">Easements are one of the oldest and most practically significant categories of proprietary interest in real pr...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/19-easements-nsw.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="property">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F3DB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Property Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Strata Title in NSW: Owners Corporations, By-Laws, Levies, and Dispute Resolution under the SSMA</h3>
-                    <p class="blog-card__excerpt">Strata title is the dominant form of property ownership for apartments, townhouses, and commercial suites in N...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/20-strata-title-nsw.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="estates">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4DC;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Wills &amp; Estates</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">6 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Making a Valid Will in NSW: Formalities, Testamentary Capacity, and Informal Wills under s 8</h3>
-                    <p class="blog-card__excerpt">The making of a valid will is one of the most important steps a person can take to ensure that their property ...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/21-valid-will-nsw.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="estates">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4DC;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Wills &amp; Estates</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">5 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Family Provision Claims in NSW: Challenging a Will under Chapter 3 of the Succession Act 2006</h3>
-                    <p class="blog-card__excerpt">A testator in NSW has broad freedom to dispose of their property as they wish. But that freedom is not absolut...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/22-family-provision-claims.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="estates">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4DC;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Wills &amp; Estates</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Probate and Administration of Estates in NSW: Grants, Duties, and the Distribution Process</h3>
-                    <p class="blog-card__excerpt">When a person dies, their assets do not automatically pass to their beneficiaries. Before the estate can be di...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/23-probate-administration-nsw.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="professional">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4CB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Professional Responsibility</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">9 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Costs Disclosure and Trust Account Obligations: Legal Professional Responsibility under the LPUL</h3>
-                    <p class="blog-card__excerpt">Legal professional responsibility sits at the heart of every solicitor&amp;#x27;s practice. Two areas generate...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/24-legal-professional-responsibility.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="commercial">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">$</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Commercial Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">11 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Contract Law Fundamentals for Commercial Practice: Formation, Breach, and Remedies under Australian Law</h3>
-                    <p class="blog-card__excerpt">Contract law is the connective tissue of commercial practice. Whether a solicitor acts for a client in a busin...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/25-contract-law-commercial-practice.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="professional">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4CB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Professional Responsibility</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Retainers in Australian Legal Practice: Formation, Scope, Implied Engagements, and the Duties They Create</h3>
-                    <p class="blog-card__excerpt">Every engagement between a solicitor and a client is governed by a retainer. The retainer is not merely a bill...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/26-retainers-formation-duties.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="professional">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4CB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Professional Responsibility</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">7 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Concurrent Conflicts of Interest: The Firm-as-One-Entity Rule and ASCR Rule 11</h3>
-                    <p class="blog-card__excerpt">Conflicts of interest are the most litigated and most professionally dangerous area of solicitor conduct. A co...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/27-concurrent-conflicts-interest.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="professional">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4CB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Professional Responsibility</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">7 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Successive Client Conflicts and Lawyer-Client Conflicts: Rules 10 and 12 ASCR</h3>
-                    <p class="blog-card__excerpt">Conflicts of interest are not limited to situations where a solicitor simultaneously represents two adverse cl...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/28-successive-lawyer-client-conflicts.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="professional">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4CB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Professional Responsibility</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">The Duty of Confidentiality: Sources, Scope, Exceptions, and the Immortal Obligation</h3>
-                    <p class="blog-card__excerpt">The duty of confidentiality is sometimes described as the foundation on which all of legal practice rests. Wit...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/29-confidentiality-duty.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="professional">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4CB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Professional Responsibility</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Legal Professional Privilege: Dominant Purpose, In-House Lawyers, and the Shield-Not-Sword Rule</h3>
-                    <p class="blog-card__excerpt">Legal professional privilege  -  also called client legal privilege  -  is frequently confused with the duty o...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/30-legal-professional-privilege.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="professional">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4CB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Professional Responsibility</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Ethics in Negotiation: Disclosure Duties, Half-Truths, and Changed Circumstances</h3>
-                    <p class="blog-card__excerpt">Negotiation is the dominant mode of dispute resolution in Australian legal practice. More than 90% of civil di...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/31-negotiation-ethics.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="professional">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4CB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Professional Responsibility</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Duties to the Court: Candour, Witnesses, and the Prohibition on Ex Parte Communication</h3>
-                    <p class="blog-card__excerpt">The duty to the court is one of the most foundational obligations in legal professional ethics. It reflects a ...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/32-duties-to-court.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="professional">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4CB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Professional Responsibility</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Criminal Law Ethics: Prosecutors as Ministers of Justice and the Defence of the Guilty Client</h3>
-                    <p class="blog-card__excerpt">Criminal law is the area of legal practice that puts the ethical framework of the adversarial system under the...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/33-criminal-law-ethics.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="professional">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4CB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Professional Responsibility</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Admission and Discipline in the NSW Legal Profession: Fit and Proper, UPC, and Professional Misconduct</h3>
-                    <p class="blog-card__excerpt">Entry to the legal profession in Australia is regulated more strictly than entry to almost any other professio...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/34-admission-discipline.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="professional">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4CB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Professional Responsibility</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">7 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Professional Civility: The Duty, Its Scope, and the Structural Causes of Its Decline</h3>
-                    <p class="blog-card__excerpt">Professional civility is sometimes dismissed as a secondary concern  -  a matter of good manners rather than s...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/35-professional-civility.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="professional">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4CB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Professional Responsibility</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">9 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Access to Justice in Australia: Barriers, Dietrich, Legal Aid, and Pro Bono</h3>
-                    <p class="blog-card__excerpt">Access to justice is the link between having a formal legal right and being able to enforce it. A right that c...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/36-access-to-justice.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="professional">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4CB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Professional Responsibility</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Client Capacity in Legal Practice: Representing Children and Adults Who Lose Capacity</h3>
-                    <p class="blog-card__excerpt">The lawyer-client relationship is built on the assumption that the client can give instructions, understand ad...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/37-client-capacity.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="professional">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x1F4CB;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Professional Responsibility</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Artificial Intelligence in Legal Practice: Hallucinations, Confidentiality, and the Duty to the Court</h3>
-                    <p class="blog-card__excerpt">Artificial intelligence tools have entered legal practice with a speed that has outpaced the development of th...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/38-ai-legal-practice.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="foundations">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&sect;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Foundations of Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">The Doctrine of Precedent: Stare Decisis, Ratio Decidendi, Obiter Dicta, and the Rules of Binding Authority</h3>
-                    <p class="blog-card__excerpt">The doctrine of precedent is the structural foundation of the common law system. It is what makes Australian l...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/39-doctrine-of-precedent.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="foundations">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&sect;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Foundations of Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Applying the Doctrine of Precedent: Step-by-Step Framework and Worked Example</h3>
-                    <p class="blog-card__excerpt">Knowing the rules of precedent in the abstract is only the first step. The harder skill is applying those rule...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/40-applying-precedent.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="foundations">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&sect;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Foundations of Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">6 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">The Farah Constructions Principle: Commonwealth Statutes, Interstate Courts, and Near-Binding Persuasive Authority</h3>
-                    <p class="blog-card__excerpt">In a federated legal system like Australia&amp;#x27;s, the same Commonwealth statute may simultaneously be int...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/41-farah-principle.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="foundations">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&sect;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Foundations of Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">7 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Distinguishing Cases: How Courts Avoid Binding Precedents Without Overruling Them</h3>
-                    <p class="blog-card__excerpt">The doctrine of precedent would be oppressively rigid if courts had no mechanism for avoiding the application ...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/42-distinguishing-cases.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="foundations">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&sect;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Foundations of Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">The Modern Approach to Statutory Interpretation: Text, Context, and Purpose</h3>
-                    <p class="blog-card__excerpt">Statutory interpretation is now one of the most important practical skills in Australian legal practice. Parli...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/43-statutory-interpretation-modern.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="foundations">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&sect;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Foundations of Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Intrinsic and Extrinsic Context in Statutory Interpretation: What Courts Can Look At and When</h3>
-                    <p class="blog-card__excerpt">The modern approach to statutory interpretation requires courts to consider context alongside text from the ve...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/44-intrinsic-extrinsic-context.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="foundations">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&sect;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Foundations of Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">7 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">The Latin Maxims of Statutory Interpretation: Noscitur, Ejusdem Generis, Expressio Unius, and Generalia Specialibus</h3>
-                    <p class="blog-card__excerpt">The Latin maxims of statutory interpretation are tools that courts use to work out the meaning of words  -  pa...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/45-latin-maxims-interpretation.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="foundations">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&sect;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Foundations of Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">9 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Common Law Presumptions in Statutory Interpretation: The Full Framework</h3>
-                    <p class="blog-card__excerpt">Common law presumptions are a set of default rules that courts apply when interpreting legislation. They repre...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/46-common-law-presumptions.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="foundations">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&sect;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Foundations of Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">The Principle of Legality: Fundamental Rights and the Heightened Presumption Against Abrogation</h3>
-                    <p class="blog-card__excerpt">The principle of legality occupies a special place among the common law presumptions. Where ordinary presumpti...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/47-principle-of-legality.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="foundations">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&sect;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Foundations of Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">The Australian Constitution and Separation of Powers: The Three Branches, Judicial Review, and the Washminster Mutation</h3>
-                    <p class="blog-card__excerpt">The Australian Constitution is the foundational legal document of the Commonwealth of Australia. It came into ...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/48-constitution-separation-powers.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="foundations">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&sect;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Foundations of Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">8 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Judicial Philosophies: Legal Formalism, Realism, and Judicial Activism Compared</h3>
-                    <p class="blog-card__excerpt">Every judge brings to their work a set of beliefs about what the law is, what it should do, and what the prope...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/49-judicial-philosophies.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="foundations">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&sect;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Foundations of Law</span>
-                      <span class="blog-card__date">June 2026</span>
-                      <span class="blog-card__read-time">9 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Judicial Philosophy in Action: Mabo, Al-Kateb, and the Stakes of the Debate</h3>
-                    <p class="blog-card__excerpt">Judicial philosophy is not merely an academic exercise. The differences between formalism and activism, betwee...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/50-mabo-alkateb-judicial-philosophy.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="blog-post-item animate-on-scroll" data-category="criminal">
-                <article class="blog-card card">
-                  <div class="blog-card__img">
-                    <div class="blog-card__img-placeholder">&#x26A1;</div>
-                  </div>
-                  <div class="blog-card__body">
-                    <div class="blog-card__meta">
-                      <span class="blog-card__category">Criminal Law · Sentencing</span>
-                      <span class="blog-card__date">17 December 2025</span>
-                      <span class="blog-card__read-time">9 min read</span>
-                    </div>
-                    <h3 class="blog-card__title">Luchetti v R [2025] NSWCCA 222</h3>
-                    <p class="blog-card__excerpt">Case note on Luchetti v R [2025] NSWCCA 222 — the NSW Court of Criminal Appeal's ruling that a lighter is not ...</p>
-                    <div class="blog-card__footer">
-                      <div class="blog-card__author">
-                        <div class="blog-card__avatar">SE</div>
-                        Shayeer Emanee
-                      </div>
-                      <a href="posts/luchetti-v-r.html" class="blog-card__read-link">Read &#x2192;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-
+          <!-- Criminal Law -->
+          <div class="blog-post-item" data-category="criminal">
+            <a href="posts/luchetti-v-r.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">17 Dec 2025</span>
+              <span class="blog-list-item__title">Luchetti v R [2025] NSWCCA 222: When a Lighter is Not a Knife</span>
+              <span class="blog-list-item__cat">Criminal · Sentencing</span>
+            </a>
           </div>
 
-          <aside class="blog-sidebar">
+          <div class="blog-post-item" data-category="criminal">
+            <a href="posts/01-armed-robbery-henry-guideline.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Objective Seriousness in Armed Robbery: The Henry Guideline and Its Limits</span>
+              <span class="blog-list-item__cat">Criminal Law</span>
+            </a>
+          </div>
 
-            <div class="sidebar-widget animate-on-scroll">
-              <h3 class="sidebar-widget__title">About the Author</h3>
-              <div style="display:flex; align-items:center; gap:0.875rem; margin-bottom:1rem;">
-                <div style="width:52px; height:52px; border-radius:50%; background:var(--accent-dim); border:1px solid var(--border-light); display:flex; align-items:center; justify-content:center; font-family:var(--font-heading); font-size:1.1rem; color:var(--accent); font-weight:600; flex-shrink:0;">SE</div>
-                <div>
-                  <div style="font-weight:600; font-size:0.95rem;">Shayeer Emanee</div>
-                  <div style="font-size:0.75rem; color:var(--text-muted);">Law &amp; Commerce Student</div>
-                </div>
-              </div>
-              <p style="font-size:0.82rem; color:var(--text-secondary); line-height:1.7; margin-bottom:1rem;">
-                First-year Law &amp; Commerce student at Macquarie University. I write to think
-                clearly and to share that thinking with anyone curious about the law.
-              </p>
-              <a href="about.html" class="btn btn--ghost btn--sm" style="width:100%; justify-content:center;">View Profile</a>
-            </div>
+          <div class="blog-post-item" data-category="criminal">
+            <a href="posts/02-towers-v-r-case-note.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Towers v R [2025] NSWCCA 142: Keeping Objective and Subjective Factors Separate in Sentencing</span>
+              <span class="blog-list-item__cat">Criminal Law</span>
+            </a>
+          </div>
 
-            <div class="sidebar-widget animate-on-scroll">
-              <h3 class="sidebar-widget__title">Categories</h3>
-              <div class="sidebar-categories">
-                <div class="sidebar-category is-active" data-category="all">
-                  All Articles <span class="sidebar-category__count">52</span>
-                </div>
-                <div class="sidebar-category" data-category="criminal">
-                  Criminal Law <span class="sidebar-category__count">11</span>
-                </div>
-                <div class="sidebar-category" data-category="foundations">
-                  Foundations of Law <span class="sidebar-category__count">12</span>
-                </div>
-                <div class="sidebar-category" data-category="professional">
-                  Professional Responsibility <span class="sidebar-category__count">14</span>
-                </div>
-                <div class="sidebar-category" data-category="family">
-                  Family Law <span class="sidebar-category__count">4</span>
-                </div>
-                <div class="sidebar-category" data-category="property">
-                  Property Law <span class="sidebar-category__count">3</span>
-                </div>
-                <div class="sidebar-category" data-category="estates">
-                  Wills &amp; Estates <span class="sidebar-category__count">3</span>
-                </div>
-                <div class="sidebar-category" data-category="dispute">
-                  Dispute Resolution <span class="sidebar-category__count">3</span>
-                </div>
-                <div class="sidebar-category" data-category="commercial">
-                  Commercial Law <span class="sidebar-category__count">1</span>
-                </div>
-                <div class="sidebar-category" data-category="commentary">
-                  Commentary <span class="sidebar-category__count">1</span>
-                </div>
-              </div>
-            </div>
+          <div class="blog-post-item" data-category="criminal">
+            <a href="posts/03-verdins-principles-nsw.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">The Verdins Principles in NSW Criminal Sentencing: Mental Illness, Culpability, and the Limits of Deterrence</span>
+              <span class="blog-list-item__cat">Criminal Law</span>
+            </a>
+          </div>
 
-            <div class="sidebar-widget animate-on-scroll">
-              <h3 class="sidebar-widget__title">Topics</h3>
-              <div class="sidebar-topics">
-                <span class="tag tag--accent">Case Analysis</span>
-                <span class="tag">Sentencing</span>
-                <span class="tag">Statutory Interpretation</span>
-                <span class="tag">Doctrine of Precedent</span>
-                <span class="tag">Evidence Law</span>
-                <span class="tag">Ethics</span>
-                <span class="tag">Family Law Act</span>
-                <span class="tag">Defamation</span>
-                <span class="tag">Conveyancing</span>
-                <span class="tag">Wills</span>
-                <span class="tag">Costs</span>
-                <span class="tag">Legal Aid</span>
-                <span class="tag">Criminal Procedure</span>
-                <span class="tag">Constitutional Law</span>
-                <span class="tag">Judicial Philosophy</span>
-                <span class="tag">AI in Law</span>
-              </div>
-            </div>
+          <div class="blog-post-item" data-category="criminal">
+            <a href="posts/04-guilty-plea-discount-nsw.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">The Guilty Plea Discount in NSW: Timing, Tiers, and the Utilitarian Principle</span>
+              <span class="blog-list-item__cat">Criminal Law</span>
+            </a>
+          </div>
 
-          </aside>
+          <div class="blog-post-item" data-category="criminal">
+            <a href="posts/05-guideline-judgments-nsw.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Guideline Judgments in NSW: Mechanism, Limits, and the Problem of Judicial Discretion</span>
+              <span class="blog-list-item__cat">Criminal Law</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="criminal">
+            <a href="posts/06-evidence-law-criminal-trials.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Tendency, Coincidence, and Hearsay in NSW Criminal Trials: The Uniform Evidence Act Framework</span>
+              <span class="blog-list-item__cat">Criminal Law</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="criminal">
+            <a href="posts/07-criminal-procedure-guide.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">From Arrest to Verdict: A Procedural Guide to NSW Criminal Law for Legal Practitioners</span>
+              <span class="blog-list-item__cat">Criminal Law</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="criminal">
+            <a href="posts/08-domestic-violence-law-nsw.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Domestic Violence Law in NSW: AVOs, Criminal Proceedings, and the CDPVA Framework</span>
+              <span class="blog-list-item__cat">Criminal Law</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="criminal">
+            <a href="posts/09-drug-offences-nsw.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Drug Offences in NSW: Possession, Supply, and the Deemed Supply Presumption under the DMTA</span>
+              <span class="blog-list-item__cat">Criminal Law</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="criminal">
+            <a href="posts/10-criminal-appeals-nsw.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Appellate Advocacy in NSW Criminal Law: Grounds of Sentence Appeal and the Resentencing Exercise</span>
+              <span class="blog-list-item__cat">Criminal Law</span>
+            </a>
+          </div>
+
+          <!-- Dispute Resolution -->
+          <div class="blog-post-item" data-category="dispute">
+            <a href="posts/11-civil-litigation-procedure.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Civil Litigation in NSW: From Pleadings to Judgment under the UCPR</span>
+              <span class="blog-list-item__cat">Dispute Resolution</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="dispute">
+            <a href="posts/12-adr-nsw.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Alternative Dispute Resolution in NSW: Mediation, Arbitration, and the Without Prejudice Privilege</span>
+              <span class="blog-list-item__cat">Dispute Resolution</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="dispute">
+            <a href="posts/13-costs-civil-litigation.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Costs in NSW Civil Litigation: Ordinary Costs, Indemnity Costs, and the Calderbank Offer</span>
+              <span class="blog-list-item__cat">Dispute Resolution</span>
+            </a>
+          </div>
+
+          <!-- Family Law -->
+          <div class="blog-post-item" data-category="family">
+            <a href="posts/14-parenting-orders-family-law.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Parenting Orders under the Family Law Act: Best Interests, the 2024 Amendments, and Family Violence</span>
+              <span class="blog-list-item__cat">Family Law</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="family">
+            <a href="posts/15-property-settlement-family-law.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Property Settlement under the Family Law Act: The Four-Step Process and Contributions Analysis</span>
+              <span class="blog-list-item__cat">Family Law</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="family">
+            <a href="posts/16-divorce-australian-law.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Divorce in Australian Law: The No-Fault Ground, Separation Under One Roof, and the 12-Month Limitation</span>
+              <span class="blog-list-item__cat">Family Law</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="family">
+            <a href="posts/17-binding-financial-agreements.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Binding Financial Agreements under the Family Law Act: Requirements, Risks, and Thorne v Kennedy</span>
+              <span class="blog-list-item__cat">Family Law</span>
+            </a>
+          </div>
+
+          <!-- Property Law -->
+          <div class="blog-post-item" data-category="property">
+            <a href="posts/18-conveyancing-process-nsw.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">The NSW Conveyancing Process: From Contract Preparation to Electronic Settlement</span>
+              <span class="blog-list-item__cat">Property Law</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="property">
+            <a href="posts/19-easements-nsw.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Easements in NSW: Creation, Types, and Remedies for Easement Disputes</span>
+              <span class="blog-list-item__cat">Property Law</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="property">
+            <a href="posts/20-strata-title-nsw.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Strata Title in NSW: Owners Corporations, By-Laws, Levies, and Dispute Resolution under the SSMA</span>
+              <span class="blog-list-item__cat">Property Law</span>
+            </a>
+          </div>
+
+          <!-- Wills & Estates -->
+          <div class="blog-post-item" data-category="estates">
+            <a href="posts/21-valid-will-nsw.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Making a Valid Will in NSW: Formalities, Testamentary Capacity, and Informal Wills under s 8</span>
+              <span class="blog-list-item__cat">Wills &amp; Estates</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="estates">
+            <a href="posts/22-family-provision-claims.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Family Provision Claims in NSW: Challenging a Will under Chapter 3 of the Succession Act 2006</span>
+              <span class="blog-list-item__cat">Wills &amp; Estates</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="estates">
+            <a href="posts/23-probate-administration-nsw.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Probate and Administration of Estates in NSW: Grants, Duties, and the Distribution Process</span>
+              <span class="blog-list-item__cat">Wills &amp; Estates</span>
+            </a>
+          </div>
+
+          <!-- Professional Responsibility -->
+          <div class="blog-post-item" data-category="professional">
+            <a href="posts/24-legal-professional-responsibility.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Costs Disclosure and Trust Account Obligations: Legal Professional Responsibility under the LPUL</span>
+              <span class="blog-list-item__cat">Prof. Responsibility</span>
+            </a>
+          </div>
+
+          <!-- Commercial Law -->
+          <div class="blog-post-item" data-category="commercial">
+            <a href="posts/25-contract-law-commercial-practice.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Contract Law Fundamentals for Commercial Practice: Formation, Breach, and Remedies under Australian Law</span>
+              <span class="blog-list-item__cat">Commercial Law</span>
+            </a>
+          </div>
+
+          <!-- Professional Responsibility cont. -->
+          <div class="blog-post-item" data-category="professional">
+            <a href="posts/26-retainers-formation-duties.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Retainers in Australian Legal Practice: Formation, Scope, Implied Engagements, and the Duties They Create</span>
+              <span class="blog-list-item__cat">Prof. Responsibility</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="professional">
+            <a href="posts/27-concurrent-conflicts-interest.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Concurrent Conflicts of Interest: The Firm-as-One-Entity Rule and ASCR Rule 11</span>
+              <span class="blog-list-item__cat">Prof. Responsibility</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="professional">
+            <a href="posts/28-successive-lawyer-client-conflicts.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Successive Client Conflicts and Lawyer-Client Conflicts: Rules 10 and 12 ASCR</span>
+              <span class="blog-list-item__cat">Prof. Responsibility</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="professional">
+            <a href="posts/29-confidentiality-duty.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">The Duty of Confidentiality: Sources, Scope, Exceptions, and the Immortal Obligation</span>
+              <span class="blog-list-item__cat">Prof. Responsibility</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="professional">
+            <a href="posts/30-legal-professional-privilege.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Legal Professional Privilege: Dominant Purpose, In-House Lawyers, and the Shield-Not-Sword Rule</span>
+              <span class="blog-list-item__cat">Prof. Responsibility</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="professional">
+            <a href="posts/31-negotiation-ethics.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Ethics in Negotiation: Disclosure Duties, Half-Truths, and Changed Circumstances</span>
+              <span class="blog-list-item__cat">Prof. Responsibility</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="professional">
+            <a href="posts/32-duties-to-court.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Duties to the Court: Candour, Witnesses, and the Prohibition on Ex Parte Communication</span>
+              <span class="blog-list-item__cat">Prof. Responsibility</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="professional">
+            <a href="posts/33-criminal-law-ethics.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Criminal Law Ethics: Prosecutors as Ministers of Justice and the Defence of the Guilty Client</span>
+              <span class="blog-list-item__cat">Prof. Responsibility</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="professional">
+            <a href="posts/34-admission-discipline.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Admission and Discipline in the NSW Legal Profession: Fit and Proper, UPC, and Professional Misconduct</span>
+              <span class="blog-list-item__cat">Prof. Responsibility</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="professional">
+            <a href="posts/35-professional-civility.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Professional Civility: The Duty, Its Scope, and the Structural Causes of Its Decline</span>
+              <span class="blog-list-item__cat">Prof. Responsibility</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="professional">
+            <a href="posts/36-access-to-justice.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Access to Justice in Australia: Barriers, Dietrich, Legal Aid, and Pro Bono</span>
+              <span class="blog-list-item__cat">Prof. Responsibility</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="professional">
+            <a href="posts/37-client-capacity.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Client Capacity in Legal Practice: Representing Children and Adults Who Lose Capacity</span>
+              <span class="blog-list-item__cat">Prof. Responsibility</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="professional">
+            <a href="posts/38-ai-legal-practice.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Artificial Intelligence in Legal Practice: Hallucinations, Confidentiality, and the Duty to the Court</span>
+              <span class="blog-list-item__cat">Prof. Responsibility</span>
+            </a>
+          </div>
+
+          <!-- Foundations of Law -->
+          <div class="blog-post-item" data-category="foundations">
+            <a href="posts/39-doctrine-of-precedent.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">The Doctrine of Precedent: Stare Decisis, Ratio Decidendi, Obiter Dicta, and the Rules of Binding Authority</span>
+              <span class="blog-list-item__cat">Foundations</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="foundations">
+            <a href="posts/40-applying-precedent.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Applying the Doctrine of Precedent: Step-by-Step Framework and Worked Example</span>
+              <span class="blog-list-item__cat">Foundations</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="foundations">
+            <a href="posts/41-farah-principle.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">The Farah Constructions Principle: Commonwealth Statutes, Interstate Courts, and Near-Binding Persuasive Authority</span>
+              <span class="blog-list-item__cat">Foundations</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="foundations">
+            <a href="posts/42-distinguishing-cases.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Distinguishing Cases: How Courts Avoid Binding Precedents Without Overruling Them</span>
+              <span class="blog-list-item__cat">Foundations</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="foundations">
+            <a href="posts/43-statutory-interpretation-modern.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">The Modern Approach to Statutory Interpretation: Text, Context, and Purpose</span>
+              <span class="blog-list-item__cat">Foundations</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="foundations">
+            <a href="posts/44-intrinsic-extrinsic-context.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Intrinsic and Extrinsic Context in Statutory Interpretation: What Courts Can Look At and When</span>
+              <span class="blog-list-item__cat">Foundations</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="foundations">
+            <a href="posts/45-latin-maxims-interpretation.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">The Latin Maxims of Statutory Interpretation: Noscitur, Ejusdem Generis, Expressio Unius, and Generalia Specialibus</span>
+              <span class="blog-list-item__cat">Foundations</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="foundations">
+            <a href="posts/46-common-law-presumptions.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Common Law Presumptions in Statutory Interpretation: The Full Framework</span>
+              <span class="blog-list-item__cat">Foundations</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="foundations">
+            <a href="posts/47-principle-of-legality.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">The Principle of Legality: Fundamental Rights and the Heightened Presumption Against Abrogation</span>
+              <span class="blog-list-item__cat">Foundations</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="foundations">
+            <a href="posts/48-constitution-separation-powers.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">The Australian Constitution and Separation of Powers: The Three Branches, Judicial Review, and the Washminster Mutation</span>
+              <span class="blog-list-item__cat">Foundations</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="foundations">
+            <a href="posts/49-judicial-philosophies.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Judicial Philosophies: Legal Formalism, Realism, and Judicial Activism Compared</span>
+              <span class="blog-list-item__cat">Foundations</span>
+            </a>
+          </div>
+
+          <div class="blog-post-item" data-category="foundations">
+            <a href="posts/50-mabo-alkateb-judicial-philosophy.html" class="blog-list-item">
+              <span class="blog-list-item__date t-mono">Jun 2026</span>
+              <span class="blog-list-item__title">Judicial Philosophy in Action: Mabo, Al-Kateb, and the Stakes of the Debate</span>
+              <span class="blog-list-item__cat">Foundations</span>
+            </a>
+          </div>
+
+          <div class="blog-list__empty" id="blog-empty" style="display:none;">
+            <p class="t-muted" style="padding:3rem 0; text-align:center; font-size:var(--fs-sm);">No articles match your search.</p>
+          </div>
 
         </div>
       </div>
@@ -1429,9 +547,9 @@
     <div class="container">
       <div class="footer__inner">
         <div>
-          <div class="footer__brand-name">Shayeer Emanee</div>
-          <div class="footer__brand-title">Lawyer &middot; Entrepreneur &middot; Technologist &middot; Artist</div>
-          <p class="footer__brand-desc">Macquarie Law &amp; Commerce student, founder of SAZICOR, and artist. Building things that matter.</p>
+          <div class="footer__brand">Shayeer Emanee</div>
+          <div class="footer__brand-sub">Lawyer · Entrepreneur · Technologist · Artist</div>
+          <p class="footer__desc">Macquarie Law &amp; Commerce student, founder of SAZICOR, freelance photographer, and artist.</p>
         </div>
         <div>
           <p class="footer__col-title">Navigation</p>
@@ -1443,12 +561,10 @@
           </ul>
         </div>
         <div>
-          <p class="footer__col-title">Blog</p>
+          <p class="footer__col-title">Content</p>
           <ul class="footer__links">
-            <li><a href="blog.html" class="footer__link">All Articles</a></li>
-            <li><a href="blog.html" class="footer__link">Criminal Law</a></li>
-            <li><a href="blog.html" class="footer__link">Foundations of Law</a></li>
-            <li><a href="blog.html" class="footer__link">Prof. Responsibility</a></li>
+            <li><a href="blog.html" class="footer__link">Legal Blog</a></li>
+            <li><a href="portfolio.html" class="footer__link">Art Portfolio</a></li>
           </ul>
         </div>
         <div>
@@ -1461,7 +577,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copyright">&copy; <span id="footer-year"></span> Shayeer Emanee. All rights reserved.</p>
+        <p class="footer__copy">© <span id="footer-year"></span> Shayeer Emanee. All rights reserved.</p>
         <div class="footer__bottom-links">
           <a href="#" class="footer__bottom-link">Privacy</a>
           <a href="#" class="footer__bottom-link">Terms</a>
@@ -1470,8 +586,7 @@
     </div>
   </footer>
 
-  <button class="back-to-top" id="back-to-top" aria-label="Back to top">&#x2191;</button>
-
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
   <script src="js/main.js"></script>
   <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </body>

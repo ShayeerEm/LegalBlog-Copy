@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,13 +11,15 @@
 </head>
 <body>
 
+  <div class="cursor cursor--dot" id="cursor-dot"></div>
+  <div class="cursor cursor--ring" id="cursor-ring"></div>
   <div class="scroll-progress" id="scroll-progress"></div>
 
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
         <span class="nav__logo-name">Shayeer Emanee</span>
-        <span class="nav__logo-title">Lawyer · Entrepreneur · Technologist · Artist</span>
+        <span class="nav__logo-sub">Lawyer · Entrepreneur · Artist</span>
       </a>
       <ul class="nav__links">
         <li><a href="index.html" class="nav__link">Home</a></li>
@@ -28,7 +30,7 @@
         <li><a href="contact.html" class="nav__link">Contact</a></li>
       </ul>
       <div class="nav__actions">
-        <button class="nav__theme-btn" id="theme-toggle" aria-label="Toggle theme">☀</button>
+        <button class="nav__theme-btn" id="theme-toggle" aria-label="Toggle theme">●</button>
         <a href="contact.html" class="nav__cta">Get in Touch</a>
         <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
@@ -38,384 +40,264 @@
   </nav>
 
   <div class="nav__mobile" id="nav-mobile">
-    <a href="index.html" class="nav__mobile-link">Home</a>
-    <a href="about.html" class="nav__mobile-link">About</a>
-    <a href="experience.html" class="nav__mobile-link">Experience</a>
-    <a href="portfolio.html" class="nav__mobile-link">Portfolio</a>
-    <a href="blog.html" class="nav__mobile-link">Blog</a>
-    <a href="contact.html" class="nav__mobile-link">Contact</a>
+    <div class="nav__mobile-inner">
+      <a href="index.html" class="nav__mobile-link">Home</a>
+      <a href="about.html" class="nav__mobile-link">About</a>
+      <a href="experience.html" class="nav__mobile-link">Experience</a>
+      <a href="portfolio.html" class="nav__mobile-link">Portfolio</a>
+      <a href="blog.html" class="nav__mobile-link">Blog</a>
+      <a href="contact.html" class="nav__mobile-link">Contact</a>
+    </div>
   </div>
 
   <main>
 
-    <!-- Page Hero -->
     <section class="page-hero">
       <div class="container">
         <p class="page-hero__eyebrow">Work, Business &amp; Community</p>
-        <h1 class="page-hero__title">Experience &amp;<br /><span class="gradient-text">Achievements</span></h1>
-        <p class="page-hero__subtitle">
+        <h1 class="page-hero__title">Experience &amp;<br>Achievements</h1>
+        <p class="page-hero__sub">
           From directing SAZICOR and leading software projects to founding clubs and earning
-          a top ATAR — here's a full record of what I've been building.
+          a top ATAR — a full record of what I've been building.
         </p>
       </div>
     </section>
 
-    <!-- ======================================================
-         WORK EXPERIENCE
-         ====================================================== -->
+    <!-- WORK EXPERIENCE -->
     <section class="section">
       <div class="container">
-        <div class="section-header animate-on-scroll">
-          <p class="section-eyebrow">Professional</p>
-          <h2 class="section-title">Work Experience</h2>
-          <p class="section-subtitle">Roles that have shaped my practical understanding of law, business, and the world.</p>
+        <div class="sh anim-fade">
+          <div>
+            <p class="sh__eyebrow">Professional</p>
+            <h2 class="sh__title">Work Experience</h2>
+          </div>
+          <a href="assets/Shayeer-Emanee-CV.pdf" download class="arrow-link">Download CV ↓</a>
         </div>
 
-        <div class="grid-2">
-
-          <div class="card experience-card animate-on-scroll">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">🚀</div>
-              <span class="experience-card__period">2020 – Present</span>
-            </div>
-            <h3 class="experience-card__role">Owner &amp; Technical Director</h3>
-            <p class="experience-card__org">SAZICOR · Sydney</p>
-            <p class="experience-card__desc">
+        <div class="exp-grid anim-fade">
+          <div class="exp-card">
+            <p class="exp-card__period">2020 – Present</p>
+            <h3 class="exp-card__role">Owner &amp; Technical Director</h3>
+            <p class="exp-card__org">SAZICOR · Sydney</p>
+            <p class="exp-card__desc">
               Founded and direct SAZICOR — a software and creative studio delivering custom web
               applications, graphic design, and commercial photography. Responsible for the full
-              client lifecycle: scoping projects, architecting solutions, leading development, and
-              managing delivery. Designed and engineered websites and digital systems for clients
-              across multiple industries.
+              client lifecycle: scoping, architecting solutions, leading development, and managing delivery.
             </p>
-            <div class="experience-card__skills">
-              <span class="tag tag--accent">Active</span>
-              <span class="tag">Web Development</span>
-              <span class="tag">Software Architecture</span>
-              <span class="tag">Graphic Design</span>
-              <span class="tag">Client Management</span>
+            <div class="exp-card__tags">
+              <span class="exp-card__tag">Active</span>
+              <span class="exp-card__tag">Web Dev</span>
+              <span class="exp-card__tag">Architecture</span>
+              <span class="exp-card__tag">Design</span>
             </div>
           </div>
 
-          <div class="card experience-card animate-on-scroll">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">🍔</div>
-              <span class="experience-card__period">March 2026 – Present</span>
-            </div>
-            <h3 class="experience-card__role">Team Member (Casual)</h3>
-            <p class="experience-card__org">El Jannah · Sydney</p>
-            <p class="experience-card__desc">
+          <div class="exp-card">
+            <p class="exp-card__period">March 2026 – Present</p>
+            <h3 class="exp-card__role">Team Member (Casual)</h3>
+            <p class="exp-card__org">El Jannah · Sydney</p>
+            <p class="exp-card__desc">
               Delivering exceptional customer service in a fast-paced environment, ensuring order
-              accuracy and high customer satisfaction. Collaborating with the team to maintain
-              strict standards of cleanliness, food safety, and operational efficiency.
+              accuracy and high customer satisfaction while maintaining strict food safety and
+              operational standards.
             </p>
-            <div class="experience-card__skills">
-              <span class="tag tag--accent">Active</span>
-              <span class="tag">Customer Service</span>
-              <span class="tag">Teamwork</span>
+            <div class="exp-card__tags">
+              <span class="exp-card__tag">Active</span>
+              <span class="exp-card__tag">Customer Service</span>
+              <span class="exp-card__tag">Teamwork</span>
             </div>
           </div>
 
-          <div class="card experience-card animate-on-scroll">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">💻</div>
-              <span class="experience-card__period">2023 – 2025</span>
-            </div>
-            <h3 class="experience-card__role">Lead Programmer</h3>
-            <p class="experience-card__org">Project B · Remote</p>
-            <p class="experience-card__desc">
+          <div class="exp-card">
+            <p class="exp-card__period">2023 – 2025</p>
+            <h3 class="exp-card__role">Lead Programmer</h3>
+            <p class="exp-card__org">Project B · Remote</p>
+            <p class="exp-card__desc">
               Spearheaded software development initiatives, managing end-to-end project lifecycles
-              and ensuring technical milestones were met. Collaborated with team members to debug
-              complex codebases — improving system stability and user experience — and translated
-              project requirements into functional, scalable code.
+              and ensuring technical milestones were met. Debugged complex codebases, improving
+              system stability, and translated requirements into scalable code.
             </p>
-            <div class="experience-card__skills">
-              <span class="tag">Software Development</span>
-              <span class="tag">Architecture</span>
-              <span class="tag">Leadership</span>
+            <div class="exp-card__tags">
+              <span class="exp-card__tag">Software Dev</span>
+              <span class="exp-card__tag">Architecture</span>
+              <span class="exp-card__tag">Leadership</span>
             </div>
           </div>
 
-          <div class="card experience-card animate-on-scroll">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">🎓</div>
-              <span class="experience-card__period">2023</span>
-            </div>
-            <h3 class="experience-card__role">Student Recruitment Intern</h3>
-            <p class="experience-card__org">Macquarie University · Sydney</p>
-            <p class="experience-card__desc">
-              Assisted the International and Domestic Recruitment Agency in engaging with prospective
-              students and providing accurate program information. Developed strong interpersonal and
-              communication skills representing the university at high-pressure events, and streamlined
-              administrative processes for efficient data management and follow-up.
+          <div class="exp-card">
+            <p class="exp-card__period">2023</p>
+            <h3 class="exp-card__role">Student Recruitment Intern</h3>
+            <p class="exp-card__org">Macquarie University · Sydney</p>
+            <p class="exp-card__desc">
+              Assisted the International and Domestic Recruitment Agency in engaging prospective
+              students and providing accurate program information. Developed strong interpersonal
+              skills representing the university at high-pressure events.
             </p>
-            <div class="experience-card__skills">
-              <span class="tag">Communication</span>
-              <span class="tag">Events</span>
-              <span class="tag">Administration</span>
+            <div class="exp-card__tags">
+              <span class="exp-card__tag">Communication</span>
+              <span class="exp-card__tag">Events</span>
+              <span class="exp-card__tag">Admin</span>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ======================================================
-         BUSINESSES
-         ====================================================== -->
-    <section class="section" style="background:var(--bg-secondary); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <!-- BUSINESSES -->
+    <section class="section section--alt">
       <div class="container">
-        <div class="section-header animate-on-scroll">
-          <p class="section-eyebrow">Entrepreneurship</p>
-          <h2 class="section-title">Businesses I've Built</h2>
-          <p class="section-subtitle">Where I put the technical, creative, and commercial sides together.</p>
+        <div class="sh anim-fade">
+          <div>
+            <p class="sh__eyebrow">Entrepreneurship</p>
+            <h2 class="sh__title">Businesses I've Built</h2>
+          </div>
         </div>
 
-        <div class="grid-2">
-
-          <div class="card experience-card animate-on-scroll" style="border-color: var(--border-light);">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">🚀</div>
-              <span class="experience-card__period">2020 – Present</span>
-            </div>
-            <h3 class="experience-card__role">SAZICOR</h3>
-            <p class="experience-card__org">Founder &amp; Technical Director · Sydney</p>
-            <p class="experience-card__desc">
+        <div class="exp-grid anim-fade">
+          <div class="exp-card">
+            <p class="exp-card__period">2020 – Present</p>
+            <h3 class="exp-card__role">SAZICOR</h3>
+            <p class="exp-card__org">Founder &amp; Technical Director · Sydney</p>
+            <p class="exp-card__desc">
               SAZICOR is a software and creative studio I founded in 2020 — building and hosting
               custom web applications, beautifully engineered websites, and digital systems for
               clients across Australia. I own the full lifecycle: discovery, architecture, build,
-              and delivery. The studio operates with data residency in Sydney and Singapore and
-              serves both small businesses and larger organisations seeking modern, reliable software.
+              and delivery. The studio operates with data residency in Sydney and Singapore.
             </p>
-            <div class="experience-card__skills">
-              <span class="tag tag--accent">Active</span>
-              <span class="tag">Web Development</span>
-              <span class="tag">Graphic Design</span>
-              <span class="tag">Photography</span>
-              <span class="tag">Branding</span>
+            <div class="exp-card__tags">
+              <span class="exp-card__tag">Active</span>
+              <span class="exp-card__tag">Web Dev</span>
+              <span class="exp-card__tag">Design</span>
+              <span class="exp-card__tag">Photography</span>
+              <span class="exp-card__tag">Branding</span>
             </div>
           </div>
 
-          <div class="card experience-card animate-on-scroll" style="border-color: var(--border-light); border-style: dashed; opacity: 0.85;">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">💡</div>
-              <span class="experience-card__period">Coming Soon</span>
-            </div>
-            <h3 class="experience-card__role">Next Venture (In Development)</h3>
-            <p class="experience-card__org">Stay tuned</p>
-            <p class="experience-card__desc">
-              A second venture is in the works — details will go here when it launches.
-              In the meantime, follow along via the blog or get in touch if you'd like to know more.
+          <div class="exp-card" style="opacity:.7; border-style: dashed;">
+            <p class="exp-card__period" style="color:var(--ink-3);">Coming Soon</p>
+            <h3 class="exp-card__role">Next Venture</h3>
+            <p class="exp-card__org">In Development</p>
+            <p class="exp-card__desc">
+              A second venture is in the works — details will appear here when it launches.
+              Follow along via the blog or get in touch if you'd like to know more.
             </p>
-            <div class="experience-card__skills">
-              <span class="tag">In Development</span>
+            <div class="exp-card__tags">
+              <span class="exp-card__tag">In Development</span>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ======================================================
-         VOLUNTEERING & LEADERSHIP
-         ====================================================== -->
+    <!-- VOLUNTEERING & LEADERSHIP -->
     <section class="section">
       <div class="container">
-        <div class="section-header animate-on-scroll">
-          <p class="section-eyebrow">Giving Back</p>
-          <h2 class="section-title">Volunteering &amp; Leadership</h2>
-          <p class="section-subtitle">Service, leadership, and contribution have been a constant alongside everything else.</p>
+        <div class="sh anim-fade">
+          <div>
+            <p class="sh__eyebrow">Giving Back</p>
+            <h2 class="sh__title">Volunteering &amp; Leadership</h2>
+          </div>
         </div>
 
-        <div class="grid-3">
-
-          <div class="card experience-card animate-on-scroll">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">📚</div>
-              <span class="experience-card__period">2021 – 2024</span>
-            </div>
-            <h3 class="experience-card__role">Library Leader</h3>
-            <p class="experience-card__org">Girraween High School</p>
-            <p class="experience-card__desc">
-              Managed student resources and assisted in coordinating literacy events across the
-              school — encouraging reading culture and supporting peers in finding the right
-              resources for their studies.
+        <div class="ach-grid anim-fade">
+          <div class="ach-card">
+            <div class="ach-card__icon">◎</div>
+            <h4 class="ach-card__title">Library Leader</h4>
+            <p class="ach-card__detail">
+              2021 – 2024 · Girraween High School<br><br>
+              Managed student resources and assisted in coordinating literacy events across the school.
             </p>
           </div>
 
-          <div class="card experience-card animate-on-scroll">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">🏸</div>
-              <span class="experience-card__period">2021 – 2023</span>
-            </div>
-            <h3 class="experience-card__role">Founder &amp; President</h3>
-            <p class="experience-card__org">Badminton Club, Girraween High School</p>
-            <p class="experience-card__desc">
-              Founded the club from scratch to promote physical health and team spirit at school.
-              Personally managed logistics, recruitment, scheduling, and member engagement —
-              growing it into an active community.
+          <div class="ach-card">
+            <div class="ach-card__icon">▷</div>
+            <h4 class="ach-card__title">Founder &amp; President</h4>
+            <p class="ach-card__detail">
+              2021 – 2023 · Badminton Club, Girraween High School<br><br>
+              Founded the club from scratch, managing logistics, recruitment, and member engagement.
             </p>
           </div>
 
-          <div class="card experience-card animate-on-scroll">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">🗣</div>
-              <span class="experience-card__period">2023 – 2025</span>
-            </div>
-            <h3 class="experience-card__role">Member</h3>
-            <p class="experience-card__org">Debating Club &amp; USYD Model UN</p>
-            <p class="experience-card__desc">
-              Developed sharp rhetorical skills, legal reasoning, and global political awareness
-              through competitive debate and Model UN representation — foundations directly
-              relevant to the work of a future lawyer.
+          <div class="ach-card">
+            <div class="ach-card__icon">⊡</div>
+            <h4 class="ach-card__title">Debating &amp; Model UN</h4>
+            <p class="ach-card__detail">
+              2023 – 2025 · Debating Club &amp; USYD Model UN<br><br>
+              Developed rhetorical skills, legal reasoning, and global political awareness through competitive debate.
             </p>
           </div>
 
-          <div class="card experience-card animate-on-scroll">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">🧠</div>
-              <span class="experience-card__period">2024 – 2025</span>
-            </div>
-            <h3 class="experience-card__role">Member</h3>
-            <p class="experience-card__org">Philosophy Club</p>
-            <p class="experience-card__desc">
-              Engaged in critical analysis of ethics and logic, fostering advanced cognitive
-              flexibility and a deeper interest in legal philosophy and jurisprudence.
+          <div class="ach-card">
+            <div class="ach-card__icon">◇</div>
+            <h4 class="ach-card__title">Philosophy Club</h4>
+            <p class="ach-card__detail">
+              2024 – 2025 · Girraween High School<br><br>
+              Engaged with classical and contemporary philosophical traditions to sharpen critical thinking.
             </p>
           </div>
 
-          <div class="card experience-card animate-on-scroll">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">🎓</div>
-              <span class="experience-card__period">2023</span>
-            </div>
-            <h3 class="experience-card__role">Student Recruitment Volunteer</h3>
-            <p class="experience-card__org">Macquarie University</p>
-            <p class="experience-card__desc">
-              Volunteered time to represent the university at recruitment events, helping
-              prospective students navigate program choices and giving back to an institution
-              I would later join as a student.
+          <div class="ach-card">
+            <div class="ach-card__icon">△</div>
+            <h4 class="ach-card__title">Photography &amp; Design Mentor</h4>
+            <p class="ach-card__detail">
+              2021 – 2024 · Informal mentoring<br><br>
+              Assisted peers in learning digital photography, composition, and basic design principles.
             </p>
           </div>
 
-          <div class="card experience-card animate-on-scroll">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">🤝</div>
-              <span class="experience-card__period">Ongoing</span>
-            </div>
-            <h3 class="experience-card__role">Community Contributions</h3>
-            <p class="experience-card__org">Various</p>
-            <p class="experience-card__desc">
-              Continuing to look for ways to contribute — whether through pro bono technical work
-              for student organisations, photography for community events, or supporting peers
-              in their academic and professional journeys.
+          <div class="ach-card">
+            <div class="ach-card__icon">○</div>
+            <h4 class="ach-card__title">Student Volunteer</h4>
+            <p class="ach-card__detail">
+              2023 – 2024 · Various school events<br><br>
+              Supported school open days, fairs, and academic competitions as a student volunteer.
             </p>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ======================================================
-         ACHIEVEMENTS & AWARDS
-         ====================================================== -->
-    <section class="section" style="background:var(--bg-secondary); border-top:1px solid var(--border);">
+    <!-- ACHIEVEMENTS -->
+    <section class="section section--alt">
       <div class="container">
-        <div class="section-header--center animate-on-scroll">
-          <p class="section-eyebrow">Recognition</p>
-          <h2 class="section-title">Awards &amp; Achievements</h2>
+        <div class="sh anim-fade">
+          <div>
+            <p class="sh__eyebrow">Recognition</p>
+            <h2 class="sh__title">Key Achievements</h2>
+          </div>
         </div>
 
-        <div class="grid-4">
-
-          <div class="card achievement-card animate-on-scroll">
-            <div class="achievement-card__icon">🎓</div>
-            <h4 class="achievement-card__title">ATAR 92.25</h4>
-            <p class="achievement-card__detail">Higher School Certificate · 2025</p>
+        <div class="ach-grid anim-fade">
+          <div class="ach-card">
+            <div class="ach-card__icon">⚖</div>
+            <h4 class="ach-card__title">ATAR 92.25</h4>
+            <p class="ach-card__detail">Achieved an ATAR of 92.25 at Girraween High School in 2025 — earning entry into a competitive double degree.</p>
           </div>
-
-          <div class="card achievement-card animate-on-scroll">
-            <div class="achievement-card__icon">🏛</div>
-            <h4 class="achievement-card__title">Law &amp; Commerce Admission</h4>
-            <p class="achievement-card__detail">Macquarie University · 2026</p>
+          <div class="ach-card">
+            <div class="ach-card__icon">⊕</div>
+            <h4 class="ach-card__title">Founded SAZICOR</h4>
+            <p class="ach-card__detail">Built and directed a software and creative studio from the ground up at age 15 — still active today.</p>
           </div>
-
-          <div class="card achievement-card animate-on-scroll">
-            <div class="achievement-card__icon">🏸</div>
-            <h4 class="achievement-card__title">Founder, Badminton Club</h4>
-            <p class="achievement-card__detail">Girraween High · 2021</p>
+          <div class="ach-card">
+            <div class="ach-card__icon">◈</div>
+            <h4 class="ach-card__title">Built This Website</h4>
+            <p class="ach-card__detail">Designed and coded this entire portfolio — CSS, JS, HTML — from scratch. Zero frameworks, zero templates.</p>
           </div>
-
-          <div class="card achievement-card animate-on-scroll">
-            <div class="achievement-card__icon">📚</div>
-            <h4 class="achievement-card__title">Library Leader</h4>
-            <p class="achievement-card__detail">Girraween High · 2021–2024</p>
+          <div class="ach-card">
+            <div class="ach-card__icon">▣</div>
+            <h4 class="ach-card__title">Macquarie Recruitment</h4>
+            <p class="ach-card__detail">Selected as a Student Recruitment Intern at Macquarie University in 2023, representing the university at events.</p>
           </div>
-
-          <div class="card achievement-card animate-on-scroll">
-            <div class="achievement-card__icon">🌐</div>
-            <h4 class="achievement-card__title">USYD Model UN Delegate</h4>
-            <p class="achievement-card__detail">Sydney · 2023–2025</p>
+          <div class="ach-card">
+            <div class="ach-card__icon">◫</div>
+            <h4 class="ach-card__title">Lead Programmer</h4>
+            <p class="ach-card__detail">Took on a Lead Programmer role at 17, managing software projects end-to-end in a professional capacity.</p>
           </div>
-
-          <div class="card achievement-card animate-on-scroll">
-            <div class="achievement-card__icon">🚀</div>
-            <h4 class="achievement-card__title">5+ Years Running SAZICOR</h4>
-            <p class="achievement-card__detail">Founded 2020</p>
+          <div class="ach-card">
+            <div class="ach-card__icon">△</div>
+            <h4 class="ach-card__title">Freelance Photographer</h4>
+            <p class="ach-card__detail">Working as a freelance commercial photographer since 2021 — product, portrait, and event photography.</p>
           </div>
-
-          <div class="card achievement-card animate-on-scroll">
-            <div class="achievement-card__icon">📷</div>
-            <h4 class="achievement-card__title">Established Photography Practice</h4>
-            <p class="achievement-card__detail">Freelance · Since 2021</p>
-          </div>
-
-          <div class="card achievement-card animate-on-scroll">
-            <div class="achievement-card__icon">💻</div>
-            <h4 class="achievement-card__title">Self-Built Portfolio Website</h4>
-            <p class="achievement-card__detail">Designed &amp; Coded · 2026</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================
-         INTERESTS & HOBBIES
-         ====================================================== -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <p class="section-eyebrow">Off the Clock</p>
-          <h2 class="section-title">Interests &amp; Hobbies</h2>
-          <p class="section-subtitle">What keeps me curious, sharp, and balanced outside of study and work.</p>
-        </div>
-
-        <div class="grid-4">
-
-          <div class="card achievement-card animate-on-scroll">
-            <div class="achievement-card__icon">📖</div>
-            <h4 class="achievement-card__title">Reading</h4>
-            <p class="achievement-card__detail">Constantly working through fiction, philosophy, and legal commentary.</p>
-          </div>
-
-          <div class="card achievement-card animate-on-scroll">
-            <div class="achievement-card__icon">✍</div>
-            <h4 class="achievement-card__title">Creative Writing</h4>
-            <p class="achievement-card__detail">Essays, short fiction, and the legal blog you're reading.</p>
-          </div>
-
-          <div class="card achievement-card animate-on-scroll">
-            <div class="achievement-card__icon">🎲</div>
-            <h4 class="achievement-card__title">Strategic Gaming</h4>
-            <p class="achievement-card__detail">Long-running Dungeons &amp; Dragons campaigns and strategy games.</p>
-          </div>
-
-          <div class="card achievement-card animate-on-scroll">
-            <div class="achievement-card__icon">🎨</div>
-            <h4 class="achievement-card__title">Fine Arts</h4>
-            <p class="achievement-card__detail">Drawing, illustration, and visual experimentation.</p>
-          </div>
-
         </div>
       </div>
     </section>
@@ -426,9 +308,9 @@
     <div class="container">
       <div class="footer__inner">
         <div>
-          <div class="footer__brand-name">Shayeer Emanee</div>
-          <div class="footer__brand-title">Lawyer · Entrepreneur · Technologist · Artist</div>
-          <p class="footer__brand-desc">Macquarie Law &amp; Commerce student, founder of SAZICOR, freelance photographer, and artist.</p>
+          <div class="footer__brand">Shayeer Emanee</div>
+          <div class="footer__brand-sub">Lawyer · Entrepreneur · Technologist · Artist</div>
+          <p class="footer__desc">Macquarie Law &amp; Commerce student, founder of SAZICOR, freelance photographer, and artist.</p>
         </div>
         <div>
           <p class="footer__col-title">Navigation</p>
@@ -456,7 +338,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copyright">© <span id="footer-year"></span> Shayeer Emanee. All rights reserved.</p>
+        <p class="footer__copy">© <span id="footer-year"></span> Shayeer Emanee. All rights reserved.</p>
         <div class="footer__bottom-links">
           <a href="#" class="footer__bottom-link">Privacy</a>
           <a href="#" class="footer__bottom-link">Terms</a>
@@ -466,7 +348,6 @@
   </footer>
 
   <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
-
   <script src="js/main.js"></script>
   <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </body>

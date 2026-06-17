@@ -1,37 +1,80 @@
-/* ============================================================
-   THEME TOGGLE
-   ============================================================ */
-
+/* ── THEME ─────────────────────────────────────────────────── */
 const THEME_KEY = 'preferred-theme';
 
 function getStoredTheme() {
-  return localStorage.getItem(THEME_KEY) || 'dark';
+  return localStorage.getItem(THEME_KEY) || 'light';
 }
 
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem(THEME_KEY, theme);
   const btn = document.getElementById('theme-toggle');
-  if (btn) btn.textContent = theme === 'dark' ? '☀' : '☾';
+  if (btn) btn.textContent = theme === 'dark' ? '○' : '●';
 }
 
 function toggleTheme() {
-  const current = document.documentElement.getAttribute('data-theme') || 'dark';
+  const current = document.documentElement.getAttribute('data-theme') || 'light';
   applyTheme(current === 'dark' ? 'light' : 'dark');
 }
 
-/* ============================================================
-   NAVIGATION
-   ============================================================ */
+/* ── CUSTOM CURSOR ─────────────────────────────────────────── */
+function initCursor() {
+  const dot  = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  if (!dot || !ring) return;
 
+  let mx = -100, my = -100;
+  let rx = -100, ry = -100;
+  let rafId;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top  = my + 'px';
+  }, { passive: true });
+
+  function tickRing() {
+    rx += (mx - rx) * .12;
+    ry += (my - ry) * .12;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    rafId = requestAnimationFrame(tickRing);
+  }
+  tickRing();
+
+  const hoverTargets = 'a, button, [role="button"], input, textarea, select, label, .blog-row, .blog-list-item, .exp-card, .ach-card, .port-item, .pf-cell';
+
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest(hoverTargets)) {
+      dot.classList.add('is-hovering');
+      ring.classList.add('is-hovering');
+    }
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest(hoverTargets)) {
+      dot.classList.remove('is-hovering');
+      ring.classList.remove('is-hovering');
+    }
+  });
+
+  document.addEventListener('mouseleave', () => {
+    dot.classList.add('cursor--hidden');
+    ring.classList.add('cursor--hidden');
+  });
+  document.addEventListener('mouseenter', () => {
+    dot.classList.remove('cursor--hidden');
+    ring.classList.remove('cursor--hidden');
+  });
+}
+
+/* ── NAVIGATION ────────────────────────────────────────────── */
 function initNav() {
-  const nav = document.querySelector('.nav');
+  const nav       = document.querySelector('.nav');
   const hamburger = document.getElementById('nav-hamburger');
   const mobileNav = document.getElementById('nav-mobile');
 
-  // Scrolled state
   function onScroll() {
-    if (nav) nav.classList.toggle('nav--scrolled', window.scrollY > 20);
+    if (nav) nav.classList.toggle('is-scrolled', window.scrollY > 20);
     updateScrollProgress();
     toggleBackToTop();
   }
@@ -39,7 +82,6 @@ function initNav() {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Mobile nav
   if (hamburger && mobileNav) {
     hamburger.addEventListener('click', () => {
       const isOpen = hamburger.classList.toggle('is-open');
@@ -56,33 +98,25 @@ function initNav() {
     });
   }
 
-  // Active link
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav__link, .nav__mobile-link').forEach(link => {
     const href = link.getAttribute('href');
     if (href && (href === currentPath || (currentPath === '' && href === 'index.html'))) {
-      link.classList.add('nav__link--active');
-      link.classList.add('nav__mobile-link--active');
+      link.classList.add('active');
     }
   });
 }
 
-/* ============================================================
-   SCROLL PROGRESS
-   ============================================================ */
-
+/* ── SCROLL PROGRESS ───────────────────────────────────────── */
 function updateScrollProgress() {
   const bar = document.getElementById('scroll-progress');
   if (!bar) return;
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  bar.style.width = docHeight > 0 ? (scrollTop / docHeight * 100) + '%' : '0%';
+  const scrollTop  = window.scrollY;
+  const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+  bar.style.width  = docHeight > 0 ? (scrollTop / docHeight * 100) + '%' : '0%';
 }
 
-/* ============================================================
-   BACK TO TOP
-   ============================================================ */
-
+/* ── BACK TO TOP ───────────────────────────────────────────── */
 function toggleBackToTop() {
   const btn = document.getElementById('back-to-top');
   if (btn) btn.classList.toggle('is-visible', window.scrollY > 500);
@@ -93,12 +127,9 @@ function initBackToTop() {
   if (btn) btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
-/* ============================================================
-   SCROLL ANIMATIONS
-   ============================================================ */
-
+/* ── SCROLL ANIMATIONS ─────────────────────────────────────── */
 function initScrollAnimations() {
-  const elements = document.querySelectorAll('.animate-on-scroll');
+  const elements = document.querySelectorAll('.anim-fade');
   if (!elements.length) return;
 
   const observer = new IntersectionObserver((entries) => {
@@ -108,18 +139,15 @@ function initScrollAnimations() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   elements.forEach((el, i) => {
-    el.style.transitionDelay = (i % 6) * 80 + 'ms';
+    el.style.transitionDelay = (i % 5) * 70 + 'ms';
     observer.observe(el);
   });
 }
 
-/* ============================================================
-   SKILL BARS
-   ============================================================ */
-
+/* ── SKILL BARS ────────────────────────────────────────────── */
 function initSkillBars() {
   const bars = document.querySelectorAll('.skill-bar__fill');
   if (!bars.length) return;
@@ -137,12 +165,9 @@ function initSkillBars() {
   bars.forEach(bar => observer.observe(bar));
 }
 
-/* ============================================================
-   PORTFOLIO FILTER
-   ============================================================ */
-
+/* ── PORTFOLIO FILTER ──────────────────────────────────────── */
 function initPortfolioFilter() {
-  const tabs = document.querySelectorAll('.filter-tab');
+  const tabs  = document.querySelectorAll('.filter-btn');
   const items = document.querySelectorAll('[data-category]');
   if (!tabs.length) return;
 
@@ -150,13 +175,13 @@ function initPortfolioFilter() {
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('is-active'));
       tab.classList.add('is-active');
-
       const filter = tab.getAttribute('data-filter');
 
       items.forEach(item => {
         const show = filter === 'all' || item.getAttribute('data-category') === filter;
+        item.style.transition = 'opacity .2s, transform .2s';
         item.style.opacity = '0';
-        item.style.transform = 'scale(0.95)';
+        item.style.transform = 'scale(.96)';
 
         setTimeout(() => {
           item.style.display = show ? '' : 'none';
@@ -170,64 +195,50 @@ function initPortfolioFilter() {
       });
     });
   });
-
-  items.forEach(item => {
-    item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-  });
 }
 
-/* ============================================================
-   BLOG SEARCH & FILTER
-   ============================================================ */
-
+/* ── BLOG SEARCH & FILTER ──────────────────────────────────── */
 function initBlogFilter() {
   const searchInput = document.getElementById('blog-search');
-  const categoryLinks = document.querySelectorAll('.sidebar-category');
-  const posts = document.querySelectorAll('.blog-post-item');
-
-  if (!searchInput && !categoryLinks.length) return;
+  const filterBtns  = document.querySelectorAll('.blog-filter-btn');
+  const posts        = document.querySelectorAll('.blog-post-item');
+  if (!posts.length) return;
 
   let activeCategory = 'all';
 
   function filterPosts() {
     const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
     posts.forEach(post => {
-      const title = post.querySelector('.blog-card__title')?.textContent.toLowerCase() || '';
-      const excerpt = post.querySelector('.blog-card__excerpt')?.textContent.toLowerCase() || '';
-      const category = post.getAttribute('data-category') || '';
-      const matchesQuery = !query || title.includes(query) || excerpt.includes(query);
-      const matchesCategory = activeCategory === 'all' || category === activeCategory;
-      post.style.display = matchesQuery && matchesCategory ? '' : 'none';
+      const titleEl    = post.querySelector('.blog-list-item__title');
+      const title      = titleEl ? titleEl.textContent.toLowerCase() : '';
+      const category   = post.getAttribute('data-category') || '';
+      const matchQuery = !query || title.includes(query);
+      const matchCat   = activeCategory === 'all' || category === activeCategory;
+      post.style.display = matchQuery && matchCat ? '' : 'none';
     });
   }
 
-  if (searchInput) {
-    searchInput.addEventListener('input', filterPosts);
-  }
+  if (searchInput) searchInput.addEventListener('input', filterPosts);
 
-  categoryLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      categoryLinks.forEach(l => l.classList.remove('is-active'));
-      link.classList.add('is-active');
-      activeCategory = link.getAttribute('data-category') || 'all';
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      activeCategory = btn.getAttribute('data-filter') || 'all';
       filterPosts();
     });
   });
 }
 
-/* ============================================================
-   TABLE OF CONTENTS (Blog post)
-   ============================================================ */
-
+/* ── TABLE OF CONTENTS ─────────────────────────────────────── */
 function initTOC() {
-  const toc = document.querySelector('.post-toc__list');
+  const toc     = document.querySelector('.post-toc__list');
   const content = document.querySelector('.post-content');
   if (!toc || !content) return;
 
   const headings = content.querySelectorAll('h2, h3');
-
   headings.forEach((heading, i) => {
-    if (!heading.id) heading.id = 'heading-' + i;
+    if (!heading.id) heading.id = 'h-' + i;
     const item = document.createElement('div');
     item.className = 'post-toc__item' + (heading.tagName === 'H3' ? ' post-toc__item--sub' : '');
     item.textContent = heading.textContent;
@@ -238,7 +249,6 @@ function initTOC() {
     toc.appendChild(item);
   });
 
-  // Highlight active heading
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -252,27 +262,22 @@ function initTOC() {
   headings.forEach(h => observer.observe(h));
 }
 
-/* ============================================================
-   CONTACT FORM
-   ============================================================ */
-
+/* ── CONTACT FORM ──────────────────────────────────────────── */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', e => {
     e.preventDefault();
     const btn = form.querySelector('.form-submit');
-    const originalText = btn.textContent;
-    btn.textContent = 'Sending...';
+    const orig = btn.textContent;
+    btn.textContent = 'Sending…';
     btn.disabled = true;
 
     setTimeout(() => {
-      btn.textContent = 'Message Sent!';
-      btn.style.background = '#22c55e';
+      btn.textContent = 'Sent ✓';
       setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
+        btn.textContent = orig;
         btn.disabled = false;
         form.reset();
       }, 3000);
@@ -280,28 +285,25 @@ function initContactForm() {
   });
 }
 
-/* ============================================================
-   COUNTERS (Stats)
-   ============================================================ */
-
+/* ── COUNTERS ──────────────────────────────────────────────── */
 function initCounters() {
-  const counters = document.querySelectorAll('.stat-item__number[data-count]');
+  const counters = document.querySelectorAll('.stat-cell__number[data-count]');
   if (!counters.length) return;
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const target = parseInt(el.getAttribute('data-count'), 10);
-      const suffix = el.getAttribute('data-suffix') || '';
-      const duration = 1500;
-      const start = performance.now();
+      const el       = entry.target;
+      const target   = parseInt(el.getAttribute('data-count'), 10);
+      const suffix   = el.getAttribute('data-suffix') || '';
+      const duration = 1400;
+      const start    = performance.now();
 
       function update(now) {
-        const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(eased * target) + suffix;
-        if (progress < 1) requestAnimationFrame(update);
+        const p = Math.min((now - start) / duration, 1);
+        const v = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(v * target) + suffix;
+        if (p < 1) requestAnimationFrame(update);
       }
 
       requestAnimationFrame(update);
@@ -312,16 +314,14 @@ function initCounters() {
   counters.forEach(c => observer.observe(c));
 }
 
-/* ============================================================
-   INIT
-   ============================================================ */
-
+/* ── INIT ──────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   applyTheme(getStoredTheme());
 
   const themeBtn = document.getElementById('theme-toggle');
   if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
 
+  initCursor();
   initNav();
   initBackToTop();
   initScrollAnimations();

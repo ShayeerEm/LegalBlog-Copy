@@ -1,80 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Art, drawings, and creative work by Shayeer Emanee." />
+  <meta name="description" content="Creative portfolio of Shayeer Emanee — pencil drawing, digital art, photography, and web design." />
   <title>Portfolio — Shayeer Emanee</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="styles/main.css" />
-  <style>
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 2000;
-      background: rgba(9, 9, 15, 0.95);
-      backdrop-filter: blur(8px);
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-    .modal.is-open { display: flex; }
-    .modal__inner {
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-lg);
-      max-width: 800px;
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-      animation: fadeInUp 0.3s ease;
-    }
-    .modal__close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 36px;
-      height: 36px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      z-index: 1;
-      transition: all var(--transition);
-    }
-    .modal__close:hover { background: var(--accent); color: #09090f; border-color: var(--accent); }
-    .modal__img {
-      aspect-ratio: 4/3;
-      background: var(--bg-secondary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 5rem;
-      color: var(--border-light);
-    }
-    .modal__body { padding: 1.75rem; }
-    .modal__title { font-size: 1.4rem; margin-bottom: 0.375rem; }
-    .modal__meta { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem; }
-    .modal__desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; }
-  </style>
 </head>
 <body>
 
+  <div class="cursor cursor--dot" id="cursor-dot"></div>
+  <div class="cursor cursor--ring" id="cursor-ring"></div>
   <div class="scroll-progress" id="scroll-progress"></div>
 
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
         <span class="nav__logo-name">Shayeer Emanee</span>
-        <span class="nav__logo-title">Lawyer · Entrepreneur · Technologist · Artist</span>
+        <span class="nav__logo-sub">Lawyer · Entrepreneur · Artist</span>
       </a>
       <ul class="nav__links">
         <li><a href="index.html" class="nav__link">Home</a></li>
@@ -85,7 +30,7 @@
         <li><a href="contact.html" class="nav__link">Contact</a></li>
       </ul>
       <div class="nav__actions">
-        <button class="nav__theme-btn" id="theme-toggle" aria-label="Toggle theme">☀</button>
+        <button class="nav__theme-btn" id="theme-toggle" aria-label="Toggle theme">●</button>
         <a href="contact.html" class="nav__cta">Get in Touch</a>
         <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
@@ -95,231 +40,200 @@
   </nav>
 
   <div class="nav__mobile" id="nav-mobile">
-    <a href="index.html" class="nav__mobile-link">Home</a>
-    <a href="about.html" class="nav__mobile-link">About</a>
-    <a href="experience.html" class="nav__mobile-link">Experience</a>
-    <a href="portfolio.html" class="nav__mobile-link">Portfolio</a>
-    <a href="blog.html" class="nav__mobile-link">Blog</a>
-    <a href="contact.html" class="nav__mobile-link">Contact</a>
+    <div class="nav__mobile-inner">
+      <a href="index.html" class="nav__mobile-link">Home</a>
+      <a href="about.html" class="nav__mobile-link">About</a>
+      <a href="experience.html" class="nav__mobile-link">Experience</a>
+      <a href="portfolio.html" class="nav__mobile-link">Portfolio</a>
+      <a href="blog.html" class="nav__mobile-link">Blog</a>
+      <a href="contact.html" class="nav__mobile-link">Contact</a>
+    </div>
   </div>
 
   <main>
 
-    <!-- Page Hero -->
     <section class="page-hero">
       <div class="container">
-        <p class="page-hero__eyebrow">Art &amp; Creative Work</p>
-        <h1 class="page-hero__title">The Portfolio</h1>
-        <p class="page-hero__subtitle">
-          Drawing, digital art, and everything creative. Law trains the mind; art feeds the soul.
-          Here's what I make when I step away from the textbooks.
+        <p class="page-hero__eyebrow">Drawing · Photography · Design</p>
+        <h1 class="page-hero__title">Portfolio</h1>
+        <p class="page-hero__sub">
+          Five years of drawing, digital work, and commercial photography —
+          alongside web and graphic design delivered through SAZICOR.
         </p>
       </div>
     </section>
 
-    <!-- ======================================================
-         GALLERY
-         ====================================================== -->
+    <!-- FILTER + GRID -->
     <section class="section">
-      <div class="container container--wide">
-
-        <!-- Filter Tabs -->
-        <div class="filter-tabs animate-on-scroll">
-          <button class="filter-tab is-active" data-filter="all">All Work</button>
-          <button class="filter-tab" data-filter="drawing">Drawing &amp; Illustration</button>
-          <button class="filter-tab" data-filter="digital">Digital Art</button>
-          <button class="filter-tab" data-filter="painting">Painting</button>
-          <button class="filter-tab" data-filter="other">Other</button>
-        </div>
-
-        <!-- Gallery Grid -->
-        <div class="portfolio-grid animate-on-scroll" id="gallery-grid">
-
-          <article class="portfolio-card card" data-category="drawing"
-            data-title="[Artwork Title]" data-medium="Pencil on Paper · [Year]"
-            data-desc="[Describe this artwork — the subject, the technique, the story behind it, or what inspired you to create it.]">
-            <div class="portfolio-card__img" style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));">✏</div>
-            <div class="portfolio-card__overlay">
-              <h4 class="portfolio-card__title">[Artwork Title]</h4>
-              <p class="portfolio-card__medium">Pencil on Paper · [Year]</p>
-            </div>
-          </article>
-
-          <article class="portfolio-card card" data-category="digital"
-            data-title="[Artwork Title]" data-medium="Digital Art · [Year]"
-            data-desc="[Describe this artwork.]">
-            <div class="portfolio-card__img" style="background: linear-gradient(135deg, var(--bg-card), #1a2235);">🎨</div>
-            <div class="portfolio-card__overlay">
-              <h4 class="portfolio-card__title">[Artwork Title]</h4>
-              <p class="portfolio-card__medium">Digital Art · [Year]</p>
-            </div>
-          </article>
-
-          <article class="portfolio-card card" data-category="drawing"
-            data-title="[Artwork Title]" data-medium="Ink Drawing · [Year]"
-            data-desc="[Describe this artwork.]">
-            <div class="portfolio-card__img" style="background: linear-gradient(135deg, #1a2235, var(--bg-secondary));">📐</div>
-            <div class="portfolio-card__overlay">
-              <h4 class="portfolio-card__title">[Artwork Title]</h4>
-              <p class="portfolio-card__medium">Ink Drawing · [Year]</p>
-            </div>
-          </article>
-
-          <article class="portfolio-card card" data-category="painting"
-            data-title="[Artwork Title]" data-medium="Watercolour · [Year]"
-            data-desc="[Describe this artwork.]">
-            <div class="portfolio-card__img" style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));">🖌</div>
-            <div class="portfolio-card__overlay">
-              <h4 class="portfolio-card__title">[Artwork Title]</h4>
-              <p class="portfolio-card__medium">Watercolour · [Year]</p>
-            </div>
-          </article>
-
-          <article class="portfolio-card card" data-category="digital"
-            data-title="[Artwork Title]" data-medium="Digital Illustration · [Year]"
-            data-desc="[Describe this artwork.]">
-            <div class="portfolio-card__img" style="background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));">💻</div>
-            <div class="portfolio-card__overlay">
-              <h4 class="portfolio-card__title">[Artwork Title]</h4>
-              <p class="portfolio-card__medium">Digital Illustration · [Year]</p>
-            </div>
-          </article>
-
-          <article class="portfolio-card card" data-category="drawing"
-            data-title="[Artwork Title]" data-medium="Charcoal · [Year]"
-            data-desc="[Describe this artwork.]">
-            <div class="portfolio-card__img" style="background: linear-gradient(135deg, #1a2235, var(--bg-card));">🖊</div>
-            <div class="portfolio-card__overlay">
-              <h4 class="portfolio-card__title">[Artwork Title]</h4>
-              <p class="portfolio-card__medium">Charcoal · [Year]</p>
-            </div>
-          </article>
-
-          <article class="portfolio-card card" data-category="other"
-            data-title="[Artwork Title]" data-medium="Mixed Media · [Year]"
-            data-desc="[Describe this artwork.]">
-            <div class="portfolio-card__img" style="background: linear-gradient(135deg, var(--bg-secondary), #1a2235);">🌀</div>
-            <div class="portfolio-card__overlay">
-              <h4 class="portfolio-card__title">[Artwork Title]</h4>
-              <p class="portfolio-card__medium">Mixed Media · [Year]</p>
-            </div>
-          </article>
-
-          <article class="portfolio-card card" data-category="painting"
-            data-title="[Artwork Title]" data-medium="Acrylic · [Year]"
-            data-desc="[Describe this artwork.]">
-            <div class="portfolio-card__img" style="background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));">🎭</div>
-            <div class="portfolio-card__overlay">
-              <h4 class="portfolio-card__title">[Artwork Title]</h4>
-              <p class="portfolio-card__medium">Acrylic · [Year]</p>
-            </div>
-          </article>
-
-          <article class="portfolio-card card" data-category="drawing"
-            data-title="[Artwork Title]" data-medium="Pencil on Paper · [Year]"
-            data-desc="[Describe this artwork.]">
-            <div class="portfolio-card__img" style="background: linear-gradient(135deg, #1a2235, var(--bg-secondary));">📝</div>
-            <div class="portfolio-card__overlay">
-              <h4 class="portfolio-card__title">[Artwork Title]</h4>
-              <p class="portfolio-card__medium">Pencil on Paper · [Year]</p>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================
-         MISCELLANEOUS / OTHER CREATIVE WORK
-         ====================================================== -->
-    <section class="section" style="background:var(--bg-secondary); border-top:1px solid var(--border);">
       <div class="container">
-        <div class="section-header animate-on-scroll">
-          <p class="section-eyebrow">Beyond Art</p>
-          <h2 class="section-title">Other Creative Projects</h2>
-          <p class="section-subtitle">Not everything I create fits neatly into a gallery. Here are some other projects worth sharing.</p>
+
+        <div class="port-filters anim-fade">
+          <button class="filter-btn is-active" data-filter="all">All Work</button>
+          <button class="filter-btn" data-filter="drawing">Pencil &amp; Ink</button>
+          <button class="filter-btn" data-filter="digital">Digital Art</button>
+          <button class="filter-btn" data-filter="photography">Photography</button>
+          <button class="filter-btn" data-filter="design">Web &amp; Design</button>
         </div>
 
-        <div class="grid-3">
+        <div class="port-grid anim-fade">
 
-          <div class="card experience-card animate-on-scroll">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">🌐</div>
-              <span class="experience-card__period">[Year]</span>
-            </div>
-            <h3 class="experience-card__role">This Website</h3>
-            <p class="experience-card__org">Self-Built Portfolio</p>
-            <p class="experience-card__desc">
-              Designed and built entirely from scratch using HTML, CSS, and JavaScript.
-              Every element — from the layout and colour palette to the animations and interactions
-              — was coded and crafted by hand.
-            </p>
-            <div class="experience-card__skills">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
+          <div class="port-item" data-category="drawing">
+            <span aria-hidden="true">✏</span>
+            <div class="port-item__overlay">
+              <p class="port-item__overlay-title">Portrait Study I</p>
+              <p class="port-item__overlay-sub">Pencil on Paper · 2023</p>
             </div>
           </div>
 
-          <div class="card experience-card animate-on-scroll">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">✍</div>
-              <span class="experience-card__period">[Year] – Present</span>
-            </div>
-            <h3 class="experience-card__role">[Creative Writing / Blog / Zine]</h3>
-            <p class="experience-card__org">[Project Name or Platform]</p>
-            <p class="experience-card__desc">
-              [Describe any creative writing projects, personal essays, short stories, zines,
-              or other written creative work you've produced. What are the themes? Who is the audience?]
-            </p>
-            <div class="experience-card__skills">
-              <span class="tag">Creative Writing</span>
-              <span class="tag">[Genre]</span>
+          <div class="port-item" data-category="drawing">
+            <span aria-hidden="true">§</span>
+            <div class="port-item__overlay">
+              <p class="port-item__overlay-title">Architectural Ink Study</p>
+              <p class="port-item__overlay-sub">Ink on Paper · 2022</p>
             </div>
           </div>
 
-          <div class="card experience-card animate-on-scroll">
-            <div class="experience-card__header">
-              <div class="experience-card__icon">🎵</div>
-              <span class="experience-card__period">[Year]</span>
+          <div class="port-item" data-category="drawing">
+            <span aria-hidden="true">✏</span>
+            <div class="port-item__overlay">
+              <p class="port-item__overlay-title">Figure Study</p>
+              <p class="port-item__overlay-sub">Pencil on Paper · 2024</p>
             </div>
-            <h3 class="experience-card__role">[Any Other Project — Music, Photography, Film, etc.]</h3>
-            <p class="experience-card__org">[Context]</p>
-            <p class="experience-card__desc">
-              [Describe any other creative projects you'd like to showcase — photography, music,
-              film, graphic design, or anything else that shows your creative range.]
-            </p>
-            <div class="experience-card__skills">
-              <span class="tag">[Medium]</span>
+          </div>
+
+          <div class="port-item" data-category="drawing">
+            <span aria-hidden="true">◇</span>
+            <div class="port-item__overlay">
+              <p class="port-item__overlay-title">Still Life</p>
+              <p class="port-item__overlay-sub">Pencil on Paper · 2021</p>
+            </div>
+          </div>
+
+          <div class="port-item" data-category="digital">
+            <span aria-hidden="true">◈</span>
+            <div class="port-item__overlay">
+              <p class="port-item__overlay-title">Digital Composition I</p>
+              <p class="port-item__overlay-sub">Digital Art · 2024</p>
+            </div>
+          </div>
+
+          <div class="port-item" data-category="digital">
+            <span aria-hidden="true">◈</span>
+            <div class="port-item__overlay">
+              <p class="port-item__overlay-title">Digital Portrait</p>
+              <p class="port-item__overlay-sub">Digital Art · 2023</p>
+            </div>
+          </div>
+
+          <div class="port-item" data-category="photography">
+            <span aria-hidden="true">⊙</span>
+            <div class="port-item__overlay">
+              <p class="port-item__overlay-title">Product Study</p>
+              <p class="port-item__overlay-sub">Commercial · 2023</p>
+            </div>
+          </div>
+
+          <div class="port-item" data-category="photography">
+            <span aria-hidden="true">⊙</span>
+            <div class="port-item__overlay">
+              <p class="port-item__overlay-title">Portrait Session</p>
+              <p class="port-item__overlay-sub">Portrait · 2024</p>
+            </div>
+          </div>
+
+          <div class="port-item" data-category="photography">
+            <span aria-hidden="true">⊙</span>
+            <div class="port-item__overlay">
+              <p class="port-item__overlay-title">Event Coverage</p>
+              <p class="port-item__overlay-sub">Event · 2022</p>
+            </div>
+          </div>
+
+          <div class="port-item" data-category="design">
+            <span aria-hidden="true">▣</span>
+            <div class="port-item__overlay">
+              <p class="port-item__overlay-title">SAZICOR Branding</p>
+              <p class="port-item__overlay-sub">Brand Identity · 2020</p>
+            </div>
+          </div>
+
+          <div class="port-item" data-category="design">
+            <span aria-hidden="true">▣</span>
+            <div class="port-item__overlay">
+              <p class="port-item__overlay-title">Client Web Project</p>
+              <p class="port-item__overlay-sub">Web Design · 2023</p>
+            </div>
+          </div>
+
+          <div class="port-item" data-category="design">
+            <span aria-hidden="true">▣</span>
+            <div class="port-item__overlay">
+              <p class="port-item__overlay-title">This Portfolio</p>
+              <p class="port-item__overlay-sub">Web Design · 2025</p>
             </div>
           </div>
 
         </div>
       </div>
     </section>
+
+    <!-- DISCIPLINES -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="sh anim-fade">
+          <div>
+            <p class="sh__eyebrow">Disciplines</p>
+            <h2 class="sh__title">What I Make</h2>
+          </div>
+        </div>
+
+        <div class="ach-grid anim-fade" style="margin-top:3rem;">
+          <div class="ach-card">
+            <div class="ach-card__icon">✏</div>
+            <h4 class="ach-card__title">Pencil &amp; Ink Drawing</h4>
+            <p class="ach-card__detail">
+              Portraits, figures, still lifes, and architectural studies. Drawing since 2021 — pencil is my primary medium.
+            </p>
+          </div>
+          <div class="ach-card">
+            <div class="ach-card__icon">◈</div>
+            <h4 class="ach-card__title">Digital Art</h4>
+            <p class="ach-card__detail">
+              Illustrations, compositions, and digital paintings. Used for both personal work and client deliverables through SAZICOR.
+            </p>
+          </div>
+          <div class="ach-card">
+            <div class="ach-card__icon">⊙</div>
+            <h4 class="ach-card__title">Photography</h4>
+            <p class="ach-card__detail">
+              Commercial product, portrait, and event photography. Available for freelance commissions across Sydney.
+            </p>
+          </div>
+          <div class="ach-card">
+            <div class="ach-card__icon">▣</div>
+            <h4 class="ach-card__title">Web &amp; Graphic Design</h4>
+            <p class="ach-card__detail">
+              Brand identities, websites, and digital systems — built and delivered through SAZICOR since 2020.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-band anim-fade">
+      <p class="cta-band__text">Interested in<br>a commission?</p>
+      <a href="contact.html" class="btn btn--solid"><span>Get in Touch</span></a>
+    </div>
 
   </main>
-
-  <!-- Artwork Modal -->
-  <div class="modal" id="artwork-modal" role="dialog" aria-modal="true">
-    <div class="modal__inner">
-      <button class="modal__close" id="modal-close" aria-label="Close">✕</button>
-      <div class="modal__img" id="modal-img">🖼</div>
-      <div class="modal__body">
-        <h2 class="modal__title" id="modal-title">Artwork Title</h2>
-        <p class="modal__meta" id="modal-meta">Medium · Year</p>
-        <p class="modal__desc" id="modal-desc">Description</p>
-      </div>
-    </div>
-  </div>
 
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
         <div>
-          <div class="footer__brand-name">Shayeer Emanee</div>
-          <div class="footer__brand-title">Lawyer · Entrepreneur · Technologist · Artist</div>
-          <p class="footer__brand-desc">Macquarie Law &amp; Commerce student, founder of SAZICOR, freelance photographer, and artist.</p>
+          <div class="footer__brand">Shayeer Emanee</div>
+          <div class="footer__brand-sub">Lawyer · Entrepreneur · Technologist · Artist</div>
+          <p class="footer__desc">Macquarie Law &amp; Commerce student, founder of SAZICOR, freelance photographer, and artist.</p>
         </div>
         <div>
           <p class="footer__col-title">Navigation</p>
@@ -347,7 +261,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copyright">© <span id="footer-year"></span> Shayeer Emanee. All rights reserved.</p>
+        <p class="footer__copy">© <span id="footer-year"></span> Shayeer Emanee. All rights reserved.</p>
         <div class="footer__bottom-links">
           <a href="#" class="footer__bottom-link">Privacy</a>
           <a href="#" class="footer__bottom-link">Terms</a>
@@ -357,35 +271,7 @@
   </footer>
 
   <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
-
   <script src="js/main.js"></script>
-  <script>
-    document.getElementById('footer-year').textContent = new Date().getFullYear();
-
-    // Artwork modal
-    const modal = document.getElementById('artwork-modal');
-    const modalClose = document.getElementById('modal-close');
-
-    document.querySelectorAll('.portfolio-card').forEach(card => {
-      card.style.cursor = 'pointer';
-      card.addEventListener('click', () => {
-        document.getElementById('modal-title').textContent = card.getAttribute('data-title') || 'Untitled';
-        document.getElementById('modal-meta').textContent = card.getAttribute('data-medium') || '';
-        document.getElementById('modal-desc').textContent = card.getAttribute('data-desc') || '';
-        document.getElementById('modal-img').innerHTML = card.querySelector('.portfolio-card__img').innerHTML;
-        modal.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    function closeModal() {
-      modal.classList.remove('is-open');
-      document.body.style.overflow = '';
-    }
-
-    modalClose.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-  </script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
